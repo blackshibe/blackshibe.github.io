@@ -1,0 +1,25 @@
+body {
+	margin: 0;
+	background-color: rgb(20, 20, 20);
+	color: white;
+	font-family: Hack, monospace;
+}
+
+.noselect {
+	user-select: none;
+}
+
+/* the wonders of css... */
+.container {
+	width: 100vw;
+	height: 100vh;
+
+	text-align: center;
+	vertical-align: middle;
+	display: table-cell;
+}
+
+p {
+	color: rgb(41, 121, 220);
+	font-weight: 700;
+}

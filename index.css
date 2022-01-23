@@ -100,6 +100,19 @@ p {
 	header {
 		height: 200px !important;
 	}
+
+	.project-grid {
+		margin: 0px !important;
+	}
+
+	.major-project-grid {
+		margin: 0px !important;
+	}
+
+	.fix-screen-width {
+		margin: 10px;
+		text-align: center;
+	}
 }
 
 button:hover,
@@ -175,7 +188,7 @@ a:link {
 }
 
 .project-grid {
-	width: min(70%, 700px);
+	width: min(100%, 700px);
 	margin: 50px;
 	display: grid;
 	justify-content: center;
@@ -184,7 +197,7 @@ a:link {
 }
 
 .major-project-grid {
-	width: min(70%, 700px);
+	width: min(100%, 700px);
 	margin: 50px;
 	gap: 20px;
 	display: flex;

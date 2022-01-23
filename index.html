@@ -7,6 +7,261 @@
 		<link rel="stylesheet" type="text/css" href="/index.css" />
 		<title>blackshibe</title>
 	</head>
+	<!-- temporary import of index.css to fix github pages not importing index.css -->
+	<style>
+		@import url("https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap");
+		@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Titillium+Web&display=swap");
+
+		body {
+			margin: 0;
+			background-color: var(--website-color);
+			color: var(--text-color);
+			font-family: "Titillium Web", sans-serif;
+			--nav-color: rgb(247, 138, 88);
+			--website-color: rgb(0, 0, 0);
+			--text-color: rgb(255, 255, 255);
+			--alt-color: rgb(199, 199, 199);
+		}
+
+		button {
+			font-family: "Archivo Black", sans-serif;
+			font-size: 0.8rem;
+			border: none;
+			padding: 15px;
+			border-radius: 0px;
+			background-color: var(--website-color);
+			color: var(--text-color);
+		}
+
+		footer {
+			color: rgb(0, 0, 0);
+			position: absolute;
+			text-align: center;
+			left: 10px;
+			top: calc(100% - 30px);
+		}
+
+		header {
+			width: 100%;
+			display: flex;
+			height: 100vh;
+			justify-content: center;
+			align-items: center;
+			background-color: var(--nav-color);
+			color: var(--website-color);
+			overflow: hidden;
+		}
+
+		nav {
+			border: 1px solid var(--nav-color);
+			margin: auto auto;
+
+			margin-top: 20px;
+			margin-bottom: 20px;
+			position: sticky;
+			top: 20px;
+			width: min-content;
+
+			display: flex;
+			justify-content: center;
+		}
+
+		img {
+			max-height: 100%;
+			max-width: 100%;
+		}
+
+		h1,
+		p {
+			margin: 0;
+		}
+
+		/* general */
+
+		.image-invert {
+			filter: invert();
+		}
+
+		.grey {
+			color: var(--alt-color);
+		}
+
+		.no-underline {
+			text-decoration: none;
+		}
+
+		.noselect {
+			user-select: none;
+		}
+
+		.hidden {
+			display: none !important;
+		}
+
+		/* hides the decorative image on the header if the screen is too small for it */
+		@media only screen and (max-width: 1100px) {
+			.header-image {
+				display: none;
+			}
+
+			.header-title h1 {
+				font-size: 3rem !important;
+			}
+
+			header {
+				height: 200px !important;
+			}
+		}
+
+		button:hover,
+		.current-button {
+			background-color: var(--nav-color);
+			color: var(--website-color);
+		}
+
+		a:visited,
+		a:link {
+			color: white;
+		}
+
+		/* header  */
+
+		.header-image {
+			float: left;
+			max-height: 100%;
+			max-width: 100%;
+			height: 100vh;
+		}
+
+		.header-title {
+			width: 500px;
+			height: 500px;
+
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			display: flex;
+		}
+
+		.header-name {
+			font-size: 5rem;
+		}
+
+		.header-description {
+			font-size: 1.3rem;
+		}
+
+		/* navbar */
+
+		.floating-navbar {
+			position: absolute;
+			width: 100%;
+		}
+
+		/* about  */
+
+		.about-header {
+			padding: 30px;
+		}
+
+		/* projects  */
+
+		.portfolio-piece {
+			border-radius: 2px;
+			color: white;
+			width: 100%;
+			padding: 10px;
+			position: relative;
+			display: grid;
+		}
+
+		.piece-date {
+			font-size: 1.2rem;
+			color: rgb(240, 240, 240);
+			margin-top: -7px;
+		}
+
+		.portfolio-img {
+			margin-top: 10px;
+		}
+
+		.project-grid {
+			width: min(70%, 700px);
+			margin: 50px;
+			display: grid;
+			justify-content: center;
+			gap: 20px;
+			grid-template-columns: repeat(auto-fill, minmax(300px, 2fr));
+		}
+
+		.major-project-grid {
+			width: min(70%, 700px);
+			margin: 50px;
+			gap: 20px;
+			display: flex;
+		}
+
+		.small-project {
+			border-radius: 2px;
+			padding: 10px;
+		}
+
+		/* compensates for the text being inside the navbar for some reason */
+		.projects {
+			padding-top: 120px;
+			min-height: 100vh;
+		}
+
+		/* contact */
+
+		.main-section-content {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.contact-info {
+			margin: auto;
+			font-size: 1.15rem;
+		}
+
+		.contact-info td:nth-child(1) {
+			padding-right: 20px;
+			text-align: right;
+		}
+
+		.discord {
+			color: rgb(95, 132, 243);
+		}
+
+		.tutanota {
+			color: rgb(247, 88, 88);
+		}
+
+		/* compenates for text sticking to the edge of the screen on phones */
+		.adjust-page-container-size {
+			width: calc(100% - 20px);
+			margin: auto;
+			text-align: center;
+			height: 100vh;
+		}
+
+		.section-padded {
+			width: 70%;
+			margin: auto;
+		}
+
+		.container {
+			margin: auto;
+		}
+
+		.invert {
+			background-color: var(--nav-color);
+			color: var(--website-color);
+			padding: 5px;
+		}
+	</style>
 	<body>
 		<header class="noselect">
 			<img class="header-image image-invert" src="./logo.png" />

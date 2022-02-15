@@ -4,147 +4,30 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" type="text/css" href="/index.css" />
-		<title>blackshibe</title>
-	</head>
+		<title>Document</title>
 
+		<link rel="stylesheet" href="index.css" />
+		<!-- <script> 
+			let colors = [
+			    [255, 255, 255],
+			    [255, 73, 73],
+			    [255, 170, 73],
+			    [73, 146, 255],
+			];
+		</script> -->
+	</head>
 	<body>
-		<header class="noselect">
-			<img class="header-image image-invert" src="./logo.png" />
-			<div class="header-title">
-				<h1 class="header-name">blackshibe</h1>
-				<span class="header-description">Programmer & Indie Game Developer</span>
+		<header>
+			<div class="img">
+				<img src="logo2.png" width="256" height="256" />
+			</div>
+			<div class="content">
+				<h1>Blackshibe</h1>
+				<h3>Programmer, gamedev</h3>
+				<li>Discord: Black Shibe#4208</li>
+				<li>Email: blackshibe@tutanota.com</li>
+				<li>Github: @blackshibe</li>
 			</div>
 		</header>
-		<!-- useless -->
-		<footer>2022</footer>
-
-		<div class="container">
-			<div class="floating-navbar">
-				<nav>
-					<button id="button-about" class="current-button">About</button>
-					<button id="button-projects">Projects</button>
-					<button id="button-contact">Contact</button>
-				</nav>
-			</div>
-
-			<!-- About  -->
-			<div class="main-section-content adjust-page-container-size" id="about">
-				<h1 class="about-header">
-					<span class="invert">I'm blackshibe, a Polish gamedev with a passion.</span>
-				</h1>
-				<p>
-					I started programming in 2017 as a hobby and have since become a game developer with skill in
-					animation, art, music, and UI design.
-				</p>
-				<p>
-					I can code in Typescript (Javascript), Lua, Python, C++ and C# and have intermediate experience with
-					full-stack web development.
-				</p>
-			</div>
-
-			<!-- Projects -->
-			<div class="main-section-content projects hidden" id="projects">
-				<h1 style="text-align: center">Stuff i've worked on</h1>
-				<div class="major-project-grid">
-					<div class="portfolio-piece">
-						<h1>
-							<a href="https://www.roblox.com/games/3837841034/">Deadline</a>
-						</h1>
-						<span class="grey">
-							<p class="piece-date">2022 | Typescript & Luau</p>
-							<p>
-								Deadline is a modern realistic military shooter with customization that goes beyond all
-								limits.
-							</p>
-							<p>I'm behind all of the programming, and part of the UI design and animation.</p>
-						</span>
-
-						<img class="portfolio-img" src="./img/deadline.png" />
-					</div>
-				</div>
-				<h1 style="text-align: center">Some other projects</h1>
-				<p class="grey fix-screen-width">
-					Disclaimer: My projects folder is 35gb, I don't publish almost any of my work publically
-				</p>
-				<div class="project-grid">
-					<div class="small-project">
-						<h1>
-							<a href="https://github.com/blackshibe/roblox-server-ray-tracer">roblox-ray-tracer</a>
-						</h1>
-
-						<p class="piece-date">2021 | Python & Luau</p>
-						<p class="grey">Roblox-based ray tracer that outputs PNG images.</p>
-						<img class="portfolio-img" src="./img/raytracer.png" />
-					</div>
-					<div class="small-project">
-						<h1>
-							<a href="https://github.com/blackshibe/turret">turret</a>
-						</h1>
-						<p class="piece-date">2021 | Typescript, MySQL, Express & React</p>
-						<p class="grey">Expressjs project built to track errors in any type of app.</p>
-						<p class="grey">
-							Features per-user error logging, a graph, and an admin login for the frontend.
-						</p>
-						<img class="portfolio-img" src="./img/turret.png" />
-					</div>
-					<div class="small-project">
-						<h1>
-							<a href="https://github.com/blackshibe/ts-remind-me">ts-remind-me</a>
-						</h1>
-						<p class="piece-date">2021 | Typescript, Electron & Angular</p>
-						<p class="grey">Reminder app for the desktop.</p>
-						<p class="grey">Features smart due date completion and image embedding.</p>
-						<img class="portfolio-img" src="./img/remind-me.png" />
-					</div>
-				</div>
-			</div>
-
-			<div class="main-section-content adjust-page-container-size hidden" id="contact">
-				<h1 style="text-align: center">Contact</h1>
-				<table>
-					<tr>
-						<td>Github</td>
-						<td>
-							<a class="no-underline" href="https://github.com/blackshibe"
-								>https://github.com/blackshibe</a
-							>
-						</td>
-					</tr>
-					<tr class="discord">
-						<td>Discord</td>
-						<td>Black Shibe#4208</td>
-					</tr>
-					<tr class="tutanota">
-						<td>Email</td>
-						<td>blackshibe@tutanota.com</td>
-					</tr>
-				</table>
-
-				<p></p>
-			</div>
-		</div>
 	</body>
-
-	<!-- quick page toggle -->
-	<script defer>
-		let ids = ["about", "projects", "contact"];
-
-		ids.forEach((element) => {
-			let section_button = document.getElementById(`button-${element}`);
-			let section_container = document.getElementById(element);
-
-			section_button.addEventListener("click", () => {
-				ids.forEach((element) => {
-					let container = document.getElementById(element);
-					let button = document.getElementById(`button-${element}`);
-					container.classList.add("hidden");
-					button.classList.remove("current-button");
-				});
-
-				section_container.classList.remove("hidden");
-				section_button.classList.add("current-button");
-			});
-		});
-	</script>
 </html>

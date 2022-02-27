@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap");
+
+:root {
+	--accent: #ffcc47;
+	--bg: #303030;
+}
+
+body {
+	margin: 0;
+	background-color: var(--accent);
+	font-family: "Fira Code", monospace;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	margin: 0;
+}
+
+/* 1st page */
+
+header {
+	margin: 5vw;
+}
+
+.first-page {
+	height: 100vh;
+	overflow-y: hidden;
+}
+
+.page-header {
+	font-size: 10vw;
+	font-weight: 400;
+}
+
+.page-motto {
+	font-size: 3vw;
+	font-weight: 400;
+	margin-bottom: 100px;
+}
+
+.grey {
+	background-color: var(--bg);
+	color: white;
+}
+
+.page-images {
+	padding: 40px;
+}
+
+.page-images img {
+	padding-right: 50px;
+	height: 1200px;
+	width: 720px;
+	box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.651);
+}
+
+@media (max-width: 1600px) {
+	.page-images {
+		display: none;
+	}
+	header {
+		padding: 0px;
+		margin: 0px;
+		display: flex;
+		position: absolute;
+		justify-content: center;
+		flex-direction: column;
+
+		align-items: center;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+/* 2nd page */
+
+.second-page {
+	min-height: 100vh;
+}
+
+.grid {
+	padding: 100px;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(min(900px, 100%), 1fr));
+	height: 50%;
+}
+
+@media (max-width: 2050px) {
+	.grid {
+		grid-template-columns: repeat(auto-fill, minmax(min(500px, 100%), 1fr));
+	}
+}
+
+.grid div {
+	padding: 10px;
+}
+.grid div h1 {
+	font-size: 70px;
+}
+
+.grid div p {
+	font-size: 25px;
+}
+
+@media (max-width: 450px) {
+	.grid div h1 {
+		font-size: 30px;
+	}
+
+	.grid {
+		padding: 10px !important;
+	}
+}
+
+/* last page */
+
+.i-dont-care-anymore {
+	padding: 100px;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+	width: 100%;
+	box-sizing: border-box;
+}
+
+@media (max-width: 1200px) {
+	.i-dont-care-anymore {
+		grid-template-columns: repeat(auto-fill, 100%);
+	}
+}
+
+.i-dont-care-anymore > div {
+	padding: 30px;
+}
+
+.i-dont-care-anymore div h1 {
+	font-size: 70px;
+}
+
+.i-dont-care-anymore div p {
+	font-size: 30px;
+}
+
+.last-page {
+	max-width: 100vw;
+	min-height: 100vh;
+}
+
+.ok2 {
+	background-color: var(--bg);
+	color: white;
+	padding: 30px;
+	margin-bottom: 50px;
+}
+
+h3 {
+	font-size: 30px;
+}
+
+li {
+	font-size: 20px;
+}
+
+a {
+	color: white;
+}
+
+@media (max-width: 450px) {
+	.i-dont-care-anymore {
+		padding: 10px;
+	}
+
+	.i-dont-care-anymore div h1 {
+		font-size: 40px;
+	}
+}

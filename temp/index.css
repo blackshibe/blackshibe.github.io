@@ -36,7 +36,7 @@ header {
 }
 
 .page-motto {
-	font-size: 3vw;
+	font-size: 2vw;
 	font-weight: 400;
 	margin-bottom: 100px;
 }
@@ -52,8 +52,6 @@ header {
 
 .page-images img {
 	padding-right: 50px;
-	height: 1200px;
-	width: 700px;
 }
 
 @media (max-width: 1640px) {
@@ -97,7 +95,7 @@ header {
 	padding: 10px;
 }
 .grid div h1 {
-	font-size: 70px;
+	font-size: 50px;
 }
 
 .grid div p {
@@ -135,7 +133,7 @@ header {
 }
 
 .i-dont-care-anymore div h1 {
-	font-size: 70px;
+	font-size: 50px;
 }
 
 .i-dont-care-anymore div p {

@@ -1,15 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Titillium+Web&display=swap");
 
 :root {
-	--accent: rgb(255, 255, 255);
+	--bg: rgb(37, 38, 56);
+	--accent: rgb(69, 73, 117);
+	--accent-dark: rgb(56, 59, 92);
+	--link: rgb(161, 167, 233);
+	--text: rgb(220, 222, 240);
+
+	--github-social: rgb(104, 108, 148);
+	--yt-social: rgb(255, 93, 93);
+	--disc-social: rgb(99, 99, 200);
 }
 
 body {
 	font-family: "Titillium Web", sans-serif;
 	margin: 0;
-	background-color: rgb(0, 0, 0);
-	color: var(--accent);
+	background-color: var(--bg);
+	color: var(--text);
 
 	/* i hate centering anything */
 	/* lazy 1 */
@@ -23,44 +30,186 @@ body {
 	margin: 0;
 }
 
-header {
+nav {
+	display: flex;
+	gap: 10px;
+	flex-direction: column;
+	padding: 30px;
+}
+
+.main-header {
+	border: 1px solid var(--accent);
 	display: flex;
 	flex-direction: row;
 }
 
 .content {
-	border: 2px solid var(--accent);
-	padding: 40px;
+	padding: 20px;
+}
+
+.headline {
+	border-bottom: 1px solid var(--accent-dark);
+	padding: 10px;
 }
 
 h1 {
 	font-size: 3rem;
 }
 
-.img {
-	background-color: var(--accent);
+.social-links {
+	display: grid;
+	grid-template-areas:
+		"em em gh"
+		"dc dc yt";
+	gap: 10px;
+}
 
-	/* lazy 2 */
+.experience {
+	display: grid;
+	max-width: 1000px;
+	grid-template-columns: repeat(auto-fit, minmax(390px, 1fr));
+	gap: 10px;
+}
+
+.experience > li {
+	border: 1px solid var(--accent-dark);
+	list-style-type: none;
+	padding: 30px;
+}
+
+li {
+	list-style-type: "- ";
+}
+
+a {
+	text-decoration: none;
+	color: var(--link);
+}
+
+button,
+.social-links a {
+	border: none;
+	background-color: unset;
+	color: white !important;
+
+	border-radius: 0px;
+
+	border: 1px solid var(--accent);
+	font-size: 1rem;
+	padding: 10px;
+	position: relative;
+	display: flex;
+	align-items: center;
+
+	transition: all 0.1s;
+	transition-property: color background-color;
+}
+
+.hover:hover {
+	color: rgb(22, 23, 23) !important;
+	padding-left: 15px;
+}
+
+.hover-github {
+	grid-area: gh;
+}
+
+.hover-email {
+	grid-area: em;
+}
+
+.hover-youtube {
+	grid-area: yt;
+}
+
+.hover-discord {
+	grid-area: dc;
+}
+
+.hover-github:hover {
+	border: 1px solid var(--github-social);
+	background-color: var(--github-social);
+}
+
+.hover-email:hover {
+	border: 1px solid var(--github-social);
+	background-color: var(--github-social);
+}
+
+.hover-youtube:hover {
+	border: 1px solid var(--yt-social);
+	background-color: var(--yt-social);
+}
+
+.hover-discord:hover {
+	border: 1px solid var(--disc-social);
+	background-color: var(--disc-social);
+}
+
+.fa {
+	padding-right: 10px;
+}
+
+.fa-arrow-right {
+	right: 15px;
+	position: absolute;
+	font-size: 0.9rem;
+}
+
+.img {
+	margin: 10px;
+
+	/* I like using flex because it does what I want it to and i'm lazy */
 	display: flex;
 	justify-content: center;
+	align-items: center;
 }
 
 img {
-	image-rendering: pixelated;
-	filter: invert();
 	width: 100%;
 	height: 100%;
 	max-width: 256px;
 	max-height: 256px;
+	filter: grayscale();
 }
 
-li {
-	list-style-type: none;
-}
-
-@media only screen and (max-width: 650px) {
-	header {
-		flex-direction: column;
-		height: unset;
+@media only screen and (max-width: 890px) {
+	nav {
+		padding-left: 5px;
+		padding-right: 5px;
 	}
+
+	p {
+		margin: 10px;
+	}
+
+	.experience > li {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	.experience ul {
+		padding-left: 10px;
+		margin-left: 10px;
+	}
+
+	.social-links {
+		display: flex;
+		gap: 10px;
+		flex-direction: column;
+	}
+
+	.experience {
+		grid-template-columns: auto;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.main-header {
+		display: block;
+	}
+}
+
+.date {
+	color: var(--accent);
 }

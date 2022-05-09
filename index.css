@@ -3,10 +3,12 @@
 	--accent: rgb(69, 73, 117);
 	--accent-dark: rgb(56, 59, 92);
 	--link: rgb(161, 167, 233);
+	--link-highlight: rgb(192, 196, 240);
 	--text: rgb(220, 222, 240);
 
 	--github-social: rgb(104, 108, 148);
-	--yt-social: rgb(255, 93, 93);
+	--yt-social: rgb(251, 59, 59);
+	--email-social: #970012;
 	--disc-social: rgb(99, 99, 200);
 }
 
@@ -17,20 +19,19 @@ body {
 	color: var(--text);
 
 	/* i hate centering anything */
-	display: grid;
-	justify-content: center;
+	display: flex;
+	flex-direction: column;
+	padding: 30px;
+	gap: 10px;
 	align-items: center;
+}
+
+body > * {
+	max-width: 1100px;
 }
 
 * {
 	margin: 0;
-}
-
-nav {
-	display: flex;
-	gap: 10px;
-	flex-direction: column;
-	padding: 30px;
 }
 
 h1 {
@@ -46,10 +47,15 @@ a {
 	color: var(--link);
 }
 
-.main-header {
+a:hover {
+	color: var(--link-highlight);
+}
+
+header {
 	border: 1px solid var(--accent);
 	display: flex;
 	flex-direction: row;
+	width: 100%;
 }
 
 .content {
@@ -59,19 +65,27 @@ a {
 .headline {
 	border-bottom: 1px solid var(--accent-dark);
 	padding: 10px;
+	margin-bottom: 20px;
 }
 
-.social-links {
+nav {
 	display: grid;
 	grid-template-areas:
-		"em em gh"
-		"dc dc yt";
+		"em em em gh gh"
+		"dc dc dc yt yt";
 	gap: 10px;
+	width: 100%;
+}
+
+section {
+	width: 100%;
 }
 
 .experience {
+	padding-top: 20px;
+
 	display: grid;
-	max-width: 1100px;
+	width: 100%;
 	grid-template-columns: repeat(auto-fit, minmax(390px, 1fr));
 	gap: 10px;
 }
@@ -83,7 +97,7 @@ a {
 }
 
 button,
-.social-links a {
+.hover {
 	border: none;
 	background-color: unset;
 	color: white !important;
@@ -99,10 +113,6 @@ button,
 
 	transition: all 0.1s;
 	transition-property: color background-color;
-}
-
-.hover:hover {
-	color: rgb(22, 23, 23) !important;
 }
 
 .hover-github {
@@ -127,8 +137,8 @@ button,
 }
 
 .hover-email:hover {
-	border: 1px solid var(--github-social);
-	background-color: var(--github-social);
+	border: 1px solid var(--email-social);
+	background-color: var(--email-social);
 }
 
 .hover-youtube:hover {
@@ -141,7 +151,8 @@ button,
 	background-color: var(--disc-social);
 }
 
-.fa {
+.fa-brands,
+.fa-solid {
 	padding-right: 10px;
 }
 
@@ -167,16 +178,11 @@ img {
 	max-height: 256px;
 }
 
-.date {
+footer {
 	color: var(--accent);
 }
 
 @media only screen and (max-width: 890px) {
-	nav {
-		padding-left: 5px;
-		padding-right: 5px;
-	}
-
 	p {
 		margin: 10px;
 	}
@@ -191,24 +197,25 @@ img {
 		margin-left: 10px;
 	}
 
-	.social-links {
+	nav {
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+@media only screen and (max-width: 700px) {
+	header {
 		display: flex;
 		gap: 10px;
 		flex-direction: column;
 	}
 
-	.experience {
-		grid-template-columns: auto;
-	}
-}
-
-@media only screen and (max-width: 600px) {
-	.main-header {
-		display: block;
-	}
-
 	img {
-		max-width: initial;
-		max-height: initial;
+		max-width: unset;
+		max-height: unset;
+	}
+
+	h1 {
+		font-size: 2rem;
 	}
 }

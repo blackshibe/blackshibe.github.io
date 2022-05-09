@@ -183,10 +183,6 @@ footer {
 }
 
 @media only screen and (max-width: 890px) {
-	p {
-		margin: 10px;
-	}
-
 	.experience > li {
 		padding-left: 10px;
 		padding-right: 10px;
@@ -204,6 +200,10 @@ footer {
 }
 
 @media only screen and (max-width: 700px) {
+	body {
+		padding: 0;
+	}
+
 	header {
 		display: flex;
 		gap: 10px;

@@ -9,6 +9,7 @@
 	--github-social: rgb(104, 108, 148);
 	--yt-social: rgb(251, 59, 59);
 	--email-social: #970012;
+	--telegram-social: #3867d5;
 	--disc-social: rgb(99, 99, 200);
 }
 
@@ -26,7 +27,7 @@ body {
 	align-items: center;
 }
 
-body > * {
+body>* {
 	max-width: 1100px;
 }
 
@@ -90,7 +91,7 @@ section {
 	gap: 10px;
 }
 
-.experience > li {
+.experience>li {
 	border: 1px solid var(--accent-dark);
 	list-style-type: none;
 	padding: 30px;
@@ -119,7 +120,7 @@ button,
 	grid-area: gh;
 }
 
-.hover-email {
+.hover-telegram {
 	grid-area: em;
 }
 
@@ -136,9 +137,9 @@ button,
 	background-color: var(--github-social);
 }
 
-.hover-email:hover {
-	border: 1px solid var(--email-social);
-	background-color: var(--email-social);
+.hover-telegram:hover {
+	border: 1px solid var(--telegram-social);
+	background-color: var(--telegram-social);
 }
 
 .hover-youtube:hover {
@@ -183,7 +184,7 @@ footer {
 }
 
 @media only screen and (max-width: 890px) {
-	.experience > li {
+	.experience>li {
 		padding-left: 10px;
 		padding-right: 10px;
 	}

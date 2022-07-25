@@ -14,7 +14,7 @@
 }
 
 body {
-	font-family: "Titillium Web", "Roboto", sans-serif;
+	font-family: "Roboto", sans-serif;
 	margin: 0;
 	background-color: var(--bg);
 	color: var(--text);
@@ -48,6 +48,14 @@ a {
 	color: var(--link);
 }
 
+p {
+	padding: 20px 10px;
+}
+
+ul {
+	margin: 10px 0px;
+}
+
 a:hover {
 	color: var(--link-highlight);
 }
@@ -66,7 +74,6 @@ header {
 .headline {
 	border-bottom: 1px solid var(--accent-dark);
 	padding: 10px;
-	margin-bottom: 20px;
 }
 
 nav {
@@ -83,8 +90,6 @@ section {
 }
 
 .experience {
-	padding-top: 20px;
-
 	display: grid;
 	width: 100%;
 	grid-template-columns: repeat(auto-fit, minmax(390px, 1fr));

@@ -1,16 +1,19 @@
 :root {
-	--bg: rgb(37, 38, 56);
-	--accent: rgb(69, 73, 117);
-	--accent-dark: rgb(56, 59, 92);
-	--link: rgb(161, 167, 233);
-	--link-highlight: rgb(192, 196, 240);
-	--text: rgb(220, 222, 240);
+	--bg: rgb(7, 7, 7);
+	--accent: rgb(61, 61, 61);
+	--accent-dark: rgb(10, 10, 10);
+
+	--link: rgb(45, 61, 236);
+	--link-highlight: rgb(100, 111, 228);
+	--text: rgb(255, 255, 255);
 
 	--github-social: rgb(104, 108, 148);
 	--yt-social: rgb(251, 59, 59);
 	--email-social: #970012;
 	--telegram-social: #3867d5;
 	--disc-social: rgb(99, 99, 200);
+
+	--rounding: 4px;
 }
 
 body {
@@ -27,33 +30,86 @@ body {
 	align-items: center;
 }
 
-body>* {
+body > * {
 	max-width: 1100px;
 }
 
-* {
+h1 {
+	font-size: 2rem;
+}
+
+p,
+h2 {
 	margin: 0;
 }
 
-h1 {
-	font-size: 4rem;
+.special-experience {
+	position: relative;
+	aspect-ratio: calc(18 / 9);
+	background-size: contain;
+	border: 1px solid var(--accent);
+}
+
+.general-experience,
+.special-experience {
+	background-color: var(--accent-dark);
+	border-radius: var(--rounding);
+}
+
+.header-link {
+	font-size: 2rem;
+	color: var(--text);
+}
+#deadline {
+	background-image: url("./deadline.png");
+}
+
+.background-image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: "100%";
+}
+
+.description-list {
+	padding: 0;
+	margin-left: 30px;
+}
+
+.description-list li {
+	list-style-type: disc;
+}
+
+.gradient {
+	border-radius: var(--rounding);
+	background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.781) 100%);
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	box-sizing: border-box;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 20px;
+}
+
+.header-title {
+	font-size: 3rem;
+}
+
+.header-description {
+	font-size: 1.2rem;
 }
 
 li {
-	list-style-type: "- ";
+	list-style-type: disc;
 }
 
 a {
 	text-decoration: none;
 	color: var(--link);
-}
-
-p {
-	padding: 20px 10px;
-}
-
-ul {
-	margin: 10px 0px;
 }
 
 a:hover {
@@ -65,6 +121,7 @@ header {
 	display: flex;
 	flex-direction: row;
 	width: 100%;
+	border-radius: var(--rounding);
 }
 
 .content {
@@ -87,6 +144,10 @@ nav {
 
 section {
 	width: 100%;
+	border-radius: var(--rounding);
+	border: 1px solid var(--accent);
+	padding: 20px;
+	box-sizing: border-box;
 }
 
 .experience {
@@ -96,7 +157,7 @@ section {
 	gap: 10px;
 }
 
-.experience>li {
+.experience > li {
 	border: 1px solid var(--accent-dark);
 	list-style-type: none;
 	padding: 30px;
@@ -106,11 +167,11 @@ button,
 .hover {
 	border: none;
 	background-color: unset;
-	color: white !important;
-
-	border-radius: 0px;
+	color: var(--text);
 
 	border: 1px solid var(--accent);
+	border-radius: var(--rounding);
+
 	font-size: 1rem;
 	padding: 10px;
 	position: relative;
@@ -119,6 +180,10 @@ button,
 
 	transition: all 0.1s;
 	transition-property: color background-color;
+}
+
+.hover:hover {
+	color: white;
 }
 
 .hover-github {
@@ -169,15 +234,16 @@ button,
 }
 
 .img {
-	margin: 10px;
-
 	/* I like using flex because it does what I want it to and i'm lazy */
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	border-radius: 8px;
 }
 
 img {
+	border-radius: var(--rounding);
+
 	width: 100%;
 	height: 100%;
 	max-width: 256px;
@@ -189,7 +255,7 @@ footer {
 }
 
 @media only screen and (max-width: 890px) {
-	.experience>li {
+	.experience > li {
 		padding-left: 10px;
 		padding-right: 10px;
 	}

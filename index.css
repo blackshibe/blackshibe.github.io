@@ -27,7 +27,7 @@ body {
 	align-items: center;
 }
 
-body>* {
+body > * {
 	max-width: 1100px;
 }
 
@@ -96,7 +96,7 @@ section {
 	gap: 10px;
 }
 
-.experience>li {
+.experience > li {
 	border: 1px solid var(--accent-dark);
 	list-style-type: none;
 	padding: 30px;
@@ -188,8 +188,14 @@ footer {
 	color: var(--accent);
 }
 
+.special-experience {
+	border: none;
+	background-color: var(--accent);
+	color: var(--text);
+}
+
 @media only screen and (max-width: 890px) {
-	.experience>li {
+	.experience > li {
 		padding-left: 10px;
 		padding-right: 10px;
 	}

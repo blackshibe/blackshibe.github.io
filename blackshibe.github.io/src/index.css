@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Poppins:wght@400;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--github-social: rgb(104, 108, 148);
+	--yt-social: rgb(251, 59, 59);
+	--email-social: #970012;
+	--telegram-social: #3867d5;
+	--disc-social: rgb(99, 99, 200);
+}
+
+body {
+	margin: 0;
+}
+
+.font-ibm-mono {
+	font-family: "IBM Plex Mono", monospace;
+}
+
+.font-poppins {
+	font-family: "Poppins", sans-serif;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+}
+
+.bg-image {
+	z-index: -1;
+	background-position: center;
+	background-size: cover;
+	width: 100vw;
+	height: 100vh;
+}
+
+.bg-ump {
+	background-image: url("../public/ump.png");
+	background-position: center;
+	background-size: cover;
+	aspect-ratio: 16 / 9;
+	image-rendering: unset;
+}
+
+.bg-noise {
+	background-image: url("../public/noise.png");
+	background-size: 500px;
+	image-rendering: pixelated;
+}
+
+.experience-width {
+	width: min(1200px, 100%);
+}
+
+.card-width {
+	width: min(800px, 100%);
+}

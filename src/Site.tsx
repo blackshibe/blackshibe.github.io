@@ -85,7 +85,6 @@ function Site() {
 						<div className="flex text-2xl gap-1 pt-1">
 							<i className="devicon-html5-plain"></i>
 							<i className="devicon-typescript-plain"></i>
-							<i className="devicon-react-original"></i>
 
 							<div className="w-2"></div>
 
@@ -128,20 +127,12 @@ function Site() {
 					<h1 className="text-2xl p-4 font-bold font-ibm-mono text-zinc-200">My Projects</h1>
 					<div className="h-full grid md:flex justify-center">
 						<div className="p-4 flex flex-col gap-4 w-full md:w-3/6">
-							<ProjectCard href="https://cetuspro.com/en">
-								<img src="logo-dark.jpg" className="from-zinc-900 bg-gradient-to-t rounded-t" />
-								<div className="p-4">
-									<Header header="CetusPro" footer="Software & Technology" />
-									<a
-										href="https://github.com/blackshibe/remind-me-notes"
-										className="text-zinc-400 text-base underline "
-									>
-										Academy project: Remind Me Notes
-									</a>
-								</div>
-							</ProjectCard>
 							<ProjectCard href="https://www.roblox.com/games/3837841034/0-21-6-Deadline">
-								<img src="ump.png" className="from-zinc-900 bg-gradient-to-t rounded-t" />
+								<img
+									src="ump.png"
+									alt="UMP-45 with a camo"
+									className="from-zinc-900 bg-gradient-to-t rounded-t"
+								/>
 								<div className="p-4">
 									<Header header="Deadline" footer="First Person Shooter" />
 
@@ -183,6 +174,22 @@ function Site() {
 					<h1 className="text-2xl p-4 font-bold font-ibm-mono text-zinc-200">My Experience</h1>
 					<div className="h-full grid md:flex justify-center">
 						<div className="p-4 flex flex-col gap-4 w-full md:w-3/5">
+							<ProjectCard href="https://cetuspro.com/en">
+								<img
+									src="logo-dark.jpg"
+									alt="CetusPro logo"
+									className="from-zinc-900 bg-gradient-to-t rounded-t"
+								/>
+								<div className="p-4">
+									<Header header="CetusPro" footer="Software & Technology" />
+									<a
+										href="https://github.com/blackshibe/remind-me-notes"
+										className="text-zinc-400 text-base underline "
+									>
+										Academy project: Remind Me Notes
+									</a>
+								</div>
+							</ProjectCard>
 							<ExperienceCard>
 								<h1 className="text-2xl font-bold font-ibm-mono">Web Development</h1>
 								<h2 className="pt-1 pb-1 font-ibm-mono font-bold text-zinc-600">HTML+CSS since 2020</h2>
@@ -223,12 +230,11 @@ function Site() {
 									<p>Experience with Roact + Rodux</p>
 								</ul>
 							</ExperienceCard>
-						</div>
-						<div className="p-4 flex flex-col gap-4 w-full md:w-2/5">
+
 							<ExperienceCard>
 								<h1 className="text-2xl font-bold font-ibm-mono">Arduino</h1>
 								<h2 className="pt-1 pb-1 font-ibm-mono font-bold text-zinc-600">C++ since 2019</h2>
-								<ul className="p-2 text-zinc-600 text-base">
+								<ul className="p-2 text-zinc-400 text-base">
 									<p>Soldering, putting together shitty pcb designs</p>
 									<p>
 										Parsing, sending and rendering .obj meshes to a TFT Display controlled by an
@@ -240,7 +246,8 @@ function Site() {
 									</p>
 								</ul>
 							</ExperienceCard>
-
+						</div>
+						<div className="p-4 flex flex-col gap-4 w-full md:w-2/5">
 							<ExperienceCard>
 								<h1 className="text-2xl font-bold font-ibm-mono">Unity</h1>
 								<ul className="p-2 text-zinc-600 text-base">

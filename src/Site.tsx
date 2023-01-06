@@ -61,7 +61,7 @@ function Site() {
 			style={{ backgroundImage: `url("${banners[banner]}")` }}
 			className="font-sans leading-6 font-poppins text-left text-lg bg-image underline-offset-4"
 		>
-			<div className="from-zinc-900 bg-gradient-to-t">
+			<div className="from-zinc-900 bg-gradient-to-t flex justify-between flex-row">
 				<div className="card-width flex justify-between flex-col h-screen p-8 md:p-16 text-zinc-200">
 					<div>
 						<h1 className="text-4xl md:text-6xl font-bold font-ibm-mono">blackshibe</h1>
@@ -119,6 +119,9 @@ function Site() {
 						<SocialIcon link="https://github.com/blackshibe" icon={faGithub} text="blackshibe" />
 						<SocialIcon link="https://youtube.com/@biackshibe" icon={faYoutube} text="biackshibe" />
 					</div>
+				</div>
+				<div className="card-width flex justify-end items-end text-white p-16 invisible md:visible opacity-50">
+					Certified™ by™<img src="RTA.png" alt="RTA certification" width={"48px"} className={"mr-1 mb-1"}/>
 				</div>
 			</div>
 			{/* 2nd page */}

@@ -75,10 +75,12 @@ function Site() {
 							have been busy making games since.
 						</p>
 						<br />
-						<p>
+						{/* <p>
 							The art of programming has had me kneeling, bending down and patching up my sore wounds. One
 							could say I was raped, but I say I use linux.
 						</p>
+						*/}
+
 						<br />
 
 						<p className="font-bold">Languages I know</p>
@@ -121,7 +123,8 @@ function Site() {
 					</div>
 				</div>
 				<div className="card-width flex justify-end items-end text-white p-16 invisible md:visible opacity-50">
-					Certified™ by™<img src="RTA.png" alt="RTA certification" width={"48px"} className={"mr-1 mb-1"}/>
+					Certified™ by™
+					<img src="RTA.png" alt="RTA certification" width={"48px"} className={"mr-1 mb-1"} />
 				</div>
 			</div>
 			{/* 2nd page */}
@@ -185,12 +188,15 @@ function Site() {
 								/>
 								<div className="p-4">
 									<Header header="CetusPro" footer="Software & Technology" />
-									<a
-										href="https://github.com/blackshibe/remind-me-notes"
-										className="text-zinc-400 text-base underline "
-									>
-										Academy project: Remind Me Notes
-									</a>
+									<p>
+										<a
+											href="https://github.com/blackshibe/remind-me-notes"
+											className="text-zinc-400 text-base underline "
+										>
+											Academy project: Remind Me Notes
+										</a>
+									</p>
+									<p className="text-zinc-400 text-base">Ongoing Internship (Jan 2023)</p>
 								</div>
 							</ProjectCard>
 							<ExperienceCard>

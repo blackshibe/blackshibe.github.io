@@ -6,6 +6,9 @@ import "./index.css";
 import sky from "./wallpaper/sky.jpg";
 import snow from "./wallpaper/snow.jpeg";
 
+import oh_two from "./wallpaper/wallpaper_01.png";
+import oh_one from "./wallpaper/wallpaper_02.png";
+
 function ProjectCard({ children, href }: React.PropsWithChildren<{ href?: string }>) {
 	return (
 		<a href={href}>
@@ -13,6 +16,15 @@ function ProjectCard({ children, href }: React.PropsWithChildren<{ href?: string
 				{children}
 			</div>
 		</a>
+	);
+}
+
+function ProjectTags({ children, date }: React.PropsWithChildren<{ date: string }>) {
+	return (
+		<div className="flex justify-between text-zinc-600 pt-4">
+			<div className="text-zinc-600 flex gap-1">{children}</div>
+			<div className="flex text-sm align-middle">{date}</div>
+		</div>
 	);
 }
 
@@ -53,7 +65,7 @@ function Header({ header, footer, href }: { header: string; footer: string; href
 }
 
 function Site() {
-	let banners = [sky, snow];
+	let banners = [oh_two, oh_one];
 	let banner = Math.floor(Math.random() * banners.length);
 
 	return (
@@ -61,7 +73,8 @@ function Site() {
 			style={{ backgroundImage: `url("${banners[banner]}")` }}
 			className="font-sans leading-6 font-poppins text-left text-lg bg-image underline-offset-4"
 		>
-			<div className="from-zinc-900 bg-gradient-to-t flex justify-between flex-row">
+			{/* bg-gradient-to-t */}
+			<div className="from-zinc-900 flex justify-between flex-row">
 				<div className="card-width flex justify-between flex-col h-screen p-8 md:p-16 text-zinc-200">
 					<div>
 						<h1 className="text-4xl md:text-6xl font-bold font-ibm-mono">blackshibe</h1>
@@ -80,41 +93,6 @@ function Site() {
 							could say I was raped, but I say I use linux.
 						</p>
 						*/}
-
-						<br />
-
-						<p className="font-bold">Languages I know</p>
-						<div className="flex text-2xl gap-1 pt-1">
-							<i className="devicon-html5-plain"></i>
-							<i className="devicon-typescript-plain"></i>
-
-							<div className="w-2"></div>
-
-							<i className="devicon-lua-plain"></i>
-							<i className="devicon-python-plain"></i>
-
-							<div className="w-2"></div>
-
-							<i className="devicon-cplusplus-plain"></i>
-							<i className="devicon-csharp-plain"></i>
-						</div>
-
-						<p className="font-bold pt-8">Technologies I'm familiar with</p>
-						<div className="flex text-2xl gap-1 pt-1">
-							<i className="devicon-git-plain"></i>
-
-							<div className="w-2"></div>
-
-							<i className="devicon-react-original"></i>
-							<i className="devicon-nextjs-original"></i>
-							<i className="devicon-tailwindcss-plain"></i>
-							<i className="devicon-electron-original"></i>
-
-							<div className="w-2"></div>
-
-							<i className="devicon-arduino-plain"></i>
-							<i className="devicon-opengl-plain"></i>
-						</div>
 					</div>
 					<div className="text-left text-white text-1xl gap-1 flex flex-col w-full">
 						<SocialIcon icon={faDiscord} text="Black Shibe#4208" />
@@ -123,8 +101,7 @@ function Site() {
 					</div>
 				</div>
 				<div className="card-width flex justify-end items-end text-white p-16 invisible md:visible opacity-50">
-					Certified™ by™
-					<img src="RTA.png" alt="RTA certification" width={"48px"} className={"mr-1 mb-1"} />
+					More info below
 				</div>
 			</div>
 			{/* 2nd page */}
@@ -142,10 +119,22 @@ function Site() {
 								<div className="p-4">
 									<Header header="Deadline" footer="First Person Shooter" />
 
-									<p className="text-zinc-400 pt-4 text-base">
+									<p className="text-zinc-400 text-base">
 										Popular First Person Shooter with the most advanced weapon customization in the
-										world.
+										world, with over a thousand unique weapon parts available in-game.
 									</p>
+
+									<p className="text-zinc-500 text-base pt-4">
+										Includes AWS-hosted backend for game moderation and basic Discord integration,
+										React+Redux for state management, a custom character controller and replication,
+										custom animation engine, procedural player animation, and a custom scripting
+										language for modding the game.
+									</p>
+
+									<ProjectTags date="2019 - Ongoing">
+										<i className="devicon-lua-plain"></i>
+										<i className="devicon-typescript-plain"></i>
+									</ProjectTags>
 								</div>
 							</ProjectCard>
 						</div>
@@ -156,6 +145,10 @@ function Site() {
 								<p className="text-zinc-600 pt-4 text-base">
 									Open-source Roblox animation library used in Deadline.
 								</p>
+
+								<ProjectTags date="2022">
+									<i className="devicon-typescript-plain"></i>
+								</ProjectTags>
 							</MiscProjectCard>
 
 							<MiscProjectCard href="https://github.com/blackshibe/remind-me-notes">
@@ -164,6 +157,12 @@ function Site() {
 								<p className="text-zinc-600 pt-4 text-base">
 									Developed as part of the CetusPro Academy.
 								</p>
+
+								<ProjectTags date="2022">
+									<i className="devicon-typescript-plain"></i>
+									<i className="devicon-react-original"></i>
+									<i className="devicon-android-plain"></i>
+								</ProjectTags>
 							</MiscProjectCard>
 
 							<MiscProjectCard href="https://github.com/blackshibe/luabsge">
@@ -174,6 +173,12 @@ function Site() {
 								<p className="text-zinc-600 pt-4 text-base">
 									Written for fun. Integrates a Lua scripting API with full control over the engine.
 								</p>
+
+								<ProjectTags date="2022">
+									<i className="devicon-c-plain"></i>
+									<i className="devicon-lua-plain"></i>
+									<i className="devicon-opengl-plain"></i>
+								</ProjectTags>
 							</MiscProjectCard>
 						</div>
 					</div>
@@ -197,12 +202,16 @@ function Site() {
 										</a>
 									</p>
 									<p className="text-zinc-400 text-base">Ongoing Internship (Jan 2023)</p>
+
+									<ProjectTags date="">
+										<i className="devicon-typescript-plain"></i>
+									</ProjectTags>
 								</div>
 							</ProjectCard>
 							<ExperienceCard>
 								<h1 className="text-2xl font-bold font-ibm-mono">Web Development</h1>
 								<h2 className="pt-1 pb-1 font-ibm-mono font-bold text-zinc-600">HTML+CSS since 2020</h2>
-								<ul className="p-2 text-zinc-400 text-base leading-7">
+								<ul className="pt-2 text-zinc-400 text-base leading-7">
 									<a
 										href="https://github.com/blackshibe/ts-remind-me"
 										className="text-zinc-400 text-base underline "
@@ -211,13 +220,17 @@ function Site() {
 									</a>
 									<p>Simple, Sentry inspired error tracker</p>
 									<p>Server hosting with Azure & AWS</p>
+
+									<ProjectTags date="">
+										<i className="devicon-typescript-plain"></i>
+									</ProjectTags>
 								</ul>
 							</ExperienceCard>
 
 							<ExperienceCard>
 								<h1 className="text-2xl font-bold font-ibm-mono">Roblox</h1>
 								<h2 className="pt-1 pb-1 font-ibm-mono font-bold text-zinc-600">Luau since 2017</h2>
-								<ul className="p-2 text-zinc-400 text-base leading-7">
+								<ul className="pt-2 text-zinc-400 text-base leading-7">
 									<p>
 										<a
 											href="https://devforum.roblox.com/t/writing-an-fps-framework-2020/503318"
@@ -237,13 +250,18 @@ function Site() {
 
 									<p>Long time user of Rojo & Roblox-ts</p>
 									<p>Experience with Roact + Rodux</p>
+
+									<ProjectTags date="">
+										<i className="devicon-lua-plain"></i>
+										<i className="devicon-python-plain"></i>
+									</ProjectTags>
 								</ul>
 							</ExperienceCard>
 
 							<ExperienceCard>
 								<h1 className="text-2xl font-bold font-ibm-mono">Arduino</h1>
 								<h2 className="pt-1 pb-1 font-ibm-mono font-bold text-zinc-600">C++ since 2019</h2>
-								<ul className="p-2 text-zinc-400 text-base">
+								<ul className="pt-2 text-zinc-400 text-base">
 									<p>Soldering, putting together shitty pcb designs</p>
 									<p>
 										Parsing, sending and rendering .obj meshes to a TFT Display controlled by an
@@ -253,23 +271,27 @@ function Site() {
 										DIY RGB strip controller integrated with the adafruit online service for a DIY
 										RGB setup
 									</p>
+									<ProjectTags date="">
+										<i className="devicon-arduino-plain"></i>
+										<i className="devicon-cplusplus-plain"></i>
+										<i className="devicon-python-plain"></i>
+									</ProjectTags>
 								</ul>
 							</ExperienceCard>
 						</div>
 						<div className="p-4 flex flex-col gap-4 w-full md:w-2/5">
 							<ExperienceCard>
 								<h1 className="text-2xl font-bold font-ibm-mono">Unity</h1>
-								<ul className="p-2 text-zinc-600 text-base">
+								<ul className="pt-2  text-zinc-600 text-base">
 									<p>TCP networking from scratch with C# core libraries for tonk-warfare</p>
 								</ul>
 							</ExperienceCard>
 
 							<ExperienceCard>
 								<h1 className="text-2xl font-bold font-ibm-mono">Other</h1>
-								<ul className="p-2 text-zinc-600 text-base">
-									<p>General experience with Linux</p>
-									<p>Viewmodel and cutscene animation in blender</p>
-									<p>Basic modelling and PBR texturing skills</p>
+								<ul className="pt-2 text-zinc-600 text-base">
+									<p>General experience with Linux for server hosting and personal use</p>
+									<p>Basics of self-compiling Android, TWRP device recovery bringup</p>
 								</ul>
 							</ExperienceCard>
 						</div>

@@ -6,8 +6,11 @@ import "./index.css";
 import sky from "./wallpaper/sky.jpg";
 import snow from "./wallpaper/snow.jpeg";
 
-import oh_two from "./wallpaper/wallpaper_01.png";
-import oh_one from "./wallpaper/wallpaper_02.png";
+import oh_one from "./wallpaper/wallpaper_01.png";
+import oh_two from "./wallpaper/wallpaper_02.png";
+import oh_three from "./wallpaper/wallpaper_03.png";
+import oh_four from "./wallpaper/wallpaper_04.png";
+import oh_five from "./wallpaper/wallpaper_05.png";
 
 function ProjectCard({ children, href }: React.PropsWithChildren<{ href?: string }>) {
 	return (
@@ -59,13 +62,13 @@ function Header({ header, footer, href }: { header: string; footer: string; href
 			<a href={href} className="text-2xl font-bold font-ibm-mono ease-in-out duration-100 hover:text-sky-300">
 				{header}
 			</a>
-			<h2 className="text-1xl font-ibm-mono font-bold text-sky-100 pb-4">{footer}</h2>
+			<h2 className="text-1xl font-ibm-mono font-bold text-orange-400 pb-4">{footer}</h2>
 		</>
 	);
 }
 
 function Site() {
-	let banners = [oh_two, oh_one];
+	let banners = [oh_one, oh_two, oh_three, oh_four, oh_five];
 	let banner = Math.floor(Math.random() * banners.length);
 
 	return (
@@ -73,31 +76,28 @@ function Site() {
 			style={{ backgroundImage: `url("${banners[banner]}")` }}
 			className="font-sans leading-6 font-poppins text-left text-lg bg-image underline-offset-4"
 		>
-			{/* bg-gradient-to-t */}
-			<div className="from-zinc-900 flex justify-between flex-row">
+			<div className="from-zinc-900 bg-gradient-to-t flex justify-between flex-row">
 				<div className="card-width flex justify-between flex-col h-screen p-8 md:p-16 text-zinc-200">
+					<div />
+
 					<div>
 						<h1 className="text-4xl md:text-6xl font-bold font-ibm-mono">blackshibe</h1>
-						<h2 className="text-1xl font-ibm-mono font-bold text-sky-200">foxes & text editors</h2>
-					</div>
-					<div className="text-sm sm:text-base">
-						<p>Hi! i'm blackshibe. I mainly do programming nowadays.</p>
+						<h2 className="text-1xl font-ibm-mono font-bold text-orange-400">foxes & text editors</h2>
+
 						<br />
-						<p>
-							Ever since I was 9, I've been playing with electronics. I started programming in 2017 and
-							have been busy making games since.
-						</p>
-						<br />
-						{/* <p>
-							The art of programming has had me kneeling, bending down and patching up my sore wounds. One
-							could say I was raped, but I say I use linux.
-						</p>
-						*/}
+
+						<div className="text-sm sm:text-base pb-16">
+							<p>Hi! i'm blackshibe. I mainly do programming nowadays.</p>
+							<p>
+								Ever since I was 9, I've been playing with electronics. I started programming in 2017
+								and have been busy making games since.
+							</p>
+						</div>
 					</div>
+
 					<div className="text-left text-white text-1xl gap-1 flex flex-col w-full">
-						<SocialIcon icon={faDiscord} text="Black Shibe#4208" />
+						<SocialIcon icon={faDiscord} text="blackshibe" />
 						<SocialIcon link="https://github.com/blackshibe" icon={faGithub} text="blackshibe" />
-						<SocialIcon link="https://youtube.com/@biackshibe" icon={faYoutube} text="biackshibe" />
 					</div>
 				</div>
 				<div className="card-width flex justify-end items-end text-white p-16 invisible md:visible opacity-50">
@@ -193,15 +193,13 @@ function Site() {
 								/>
 								<div className="p-4">
 									<Header header="CetusPro" footer="Software & Technology" />
-									<p>
-										<a
-											href="https://github.com/blackshibe/remind-me-notes"
-											className="text-zinc-400 text-base underline "
-										>
-											Academy project: Remind Me Notes
-										</a>
-									</p>
-									<p className="text-zinc-400 text-base">Ongoing Internship (Jan 2023)</p>
+									<a
+										href="https://github.com/blackshibe/remind-me-notes"
+										className="text-zinc-400 text-base underline "
+									>
+										Academy project: Remind Me Notes
+									</a>
+									<p className="text-zinc-400 text-base">Internship (Jan 2023 - March 2023)</p>
 
 									<ProjectTags date="">
 										<i className="devicon-typescript-plain"></i>

@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/static/css/main.f37295ad.css",
-    "main.js": "/static/js/main.1863600a.js",
-    "static/media/wallpaper_02.png": "/static/media/wallpaper_02.b3ed8dff5f0af8aad867.png",
-    "static/media/wallpaper_04.png": "/static/media/wallpaper_04.3e1c927316711819c620.png",
-    "static/media/wallpaper_03.png": "/static/media/wallpaper_03.9b0f8fe5f0b6dfeb0ec2.png",
-    "static/media/wallpaper_05.png": "/static/media/wallpaper_05.e9068843f858a8c90cdc.png",
-    "static/media/wallpaper_01.png": "/static/media/wallpaper_01.f772129226b59ce4b15f.png",
+    "main.js": "/static/js/main.bc1c651b.js",
+    "static/media/wallpaper_02.jpg": "/static/media/wallpaper_02.3f3bd3b1dbcf5f428b72.jpg",
+    "static/media/wallpaper_04.jpg": "/static/media/wallpaper_04.d5ebcfad5bbed8c27553.jpg",
+    "static/media/wallpaper_03.jpg": "/static/media/wallpaper_03.e753977f8f549ba93f2a.jpg",
+    "static/media/wallpaper_05.jpg": "/static/media/wallpaper_05.65f8ec7d32b9b52f6c06.jpg",
     "static/media/ump.png": "/static/media/ump.6854fd66d5ca5d7a977c.png",
+    "static/media/wallpaper_01.jpg": "/static/media/wallpaper_01.2d2ae1b61157d921c98f.jpg",
     "static/media/noise.png": "/static/media/noise.30018bbf3e23114b339e.png",
     "index.html": "/index.html",
     "main.f37295ad.css.map": "/static/css/main.f37295ad.css.map",
-    "main.1863600a.js.map": "/static/js/main.1863600a.js.map"
+    "main.bc1c651b.js.map": "/static/js/main.bc1c651b.js.map"
   },
   "entrypoints": [
     "static/css/main.f37295ad.css",
-    "static/js/main.1863600a.js"
+    "static/js/main.bc1c651b.js"
   ]
 }

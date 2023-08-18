@@ -3,14 +3,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import "./index.css";
 
-import sky from "./wallpaper/sky.jpg";
-import snow from "./wallpaper/snow.jpeg";
-
-import oh_one from "./wallpaper/wallpaper_01.png";
-import oh_two from "./wallpaper/wallpaper_02.png";
-import oh_three from "./wallpaper/wallpaper_03.png";
-import oh_four from "./wallpaper/wallpaper_04.png";
-import oh_five from "./wallpaper/wallpaper_05.png";
+import oh_one from "./wallpaper/wallpaper_01.jpg";
+import oh_two from "./wallpaper/wallpaper_02.jpg";
+import oh_three from "./wallpaper/wallpaper_03.jpg";
+import oh_four from "./wallpaper/wallpaper_04.jpg";
+import oh_five from "./wallpaper/wallpaper_05.jpg";
 
 function ProjectCard({ children, href }: React.PropsWithChildren<{ href?: string }>) {
 	return (

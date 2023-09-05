@@ -1,13 +1,9 @@
-import { faDiscord, faGithub, faYoutube, IconDefinition } from "@fortawesome/free-brands-svg-icons";
+import { faDiscord, faGithub, IconDefinition } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import "./index.css";
 
-import oh_one from "./wallpaper/wallpaper_01.jpg";
-import oh_two from "./wallpaper/wallpaper_02.jpg";
-import oh_three from "./wallpaper/wallpaper_03.jpg";
-import oh_four from "./wallpaper/wallpaper_04.jpg";
-import oh_five from "./wallpaper/wallpaper_05.jpg";
+import snow from "./wallpaper/snow.jpeg";
 
 function ProjectCard({ children, href }: React.PropsWithChildren<{ href?: string }>) {
 	return (
@@ -42,6 +38,10 @@ function ExperienceCard({ children }: React.PropsWithChildren<{}>) {
 	return <div className="border-zinc-700 bg-zinc-900 rounded border p-4">{children}</div>;
 }
 
+function ExperienceCardWithImage({ children }: React.PropsWithChildren<{}>) {
+	return <div className="border-zinc-700 bg-zinc-900 rounded border">{children}</div>;
+}
+
 function SocialIcon({ icon, text, link }: { icon: IconDefinition; text: string; link?: string }) {
 	return (
 		<div className="flex">
@@ -56,7 +56,7 @@ function SocialIcon({ icon, text, link }: { icon: IconDefinition; text: string; 
 function Header({ header, footer, href }: { header: string; footer: string; href?: string }) {
 	return (
 		<>
-			<a href={href} className="text-2xl font-bold font-ibm-mono ease-in-out duration-100 hover:text-sky-300">
+			<a href={href} className="text-2xl font-bold font-ibm-mono ease-in-out duration-100">
 				{header}
 			</a>
 			<h2 className="text-1xl font-ibm-mono font-bold text-orange-400 pb-4">{footer}</h2>
@@ -65,7 +65,7 @@ function Header({ header, footer, href }: { header: string; footer: string; href
 }
 
 function Site() {
-	let banners = [oh_one, oh_two, oh_three, oh_four, oh_five];
+	let banners = [snow];
 	let banner = Math.floor(Math.random() * banners.length);
 
 	return (
@@ -101,6 +101,7 @@ function Site() {
 					More info below
 				</div>
 			</div>
+
 			{/* 2nd page */}
 			<div className="bg-zinc-800 flex flex-col bg-noise justify-center items-center text-white">
 				<div className="experience-width gap-8 p-2 md:p-8">
@@ -109,7 +110,7 @@ function Site() {
 						<div className="p-4 flex flex-col gap-4 w-full md:w-3/6">
 							<ProjectCard href="https://www.roblox.com/games/3837841034/0-21-6-Deadline">
 								<img
-									src="ump.png"
+									src="deadline.png"
 									alt="UMP-45 with a camo"
 									className="from-zinc-900 bg-gradient-to-t rounded-t"
 								/>
@@ -121,12 +122,31 @@ function Site() {
 										world, with over a thousand unique weapon parts available in-game.
 									</p>
 
-									<p className="text-zinc-500 text-base pt-4">
-										Includes AWS-hosted backend for game moderation and basic Discord integration,
-										React+Redux for state management, a custom character controller and replication,
-										custom animation engine, procedural player animation, and a custom scripting
-										language for modding the game.
-									</p>
+									<ul className="text-zinc-500 text-base list-disc list-inside pt-4">
+										<li>AWS-hosted website with backend for ingame and discord integration</li>
+										<li>Roact & Rodux (similiar to React & Redux) for state management</li>
+										<li>
+											Custom character controller with from-scratch netcode including a rollback
+											buffer
+										</li>
+										<li>
+											Completely custom open-source animation engine with layering and rebasing
+										</li>
+										<li>
+											Procedural third person player animation with footplanting and inverse
+											kinematics
+										</li>
+										<li>
+											An integrated custom scripting language written in collaboration with{" "}
+											<a
+												href="http://github.com/phunanon"
+												className="text-orange-400 text-underline"
+											>
+												phunanon
+											</a>{" "}
+											for modding the game
+										</li>
+									</ul>
 
 									<ProjectTags date="2019 - Ongoing">
 										<i className="devicon-lua-plain"></i>
@@ -138,8 +158,11 @@ function Site() {
 						<div className="p-4 flex flex-col w-full md:w-3/6 gap-4">
 							<MiscProjectCard href="https://blackshibe.github.io/canim">
 								<h1 className="text-2xl font-bold font-ibm-mono">Canim</h1>
-								<h2 className="text-1xl font-ibm-mono font-bold text-sky-100">Open-source Animator</h2>
-								<p className="text-zinc-600 pt-4 text-base">
+								<h2 className="text-1xl font-ibm-mono font-bold text-orange-400">
+									Open-source Animator
+								</h2>
+
+								<p className="text-zinc-600 pt-2 text-base">
 									Open-source Roblox animation library used in Deadline.
 								</p>
 
@@ -150,8 +173,9 @@ function Site() {
 
 							<MiscProjectCard href="https://github.com/blackshibe/remind-me-notes">
 								<h1 className="text-2xl font-bold font-ibm-mono">Remind Me</h1>
-								<h2 className="text-1xl font-ibm-mono font-bold text-sky-100">React Native App</h2>
-								<p className="text-zinc-600 pt-4 text-base">
+								<h2 className="text-1xl font-ibm-mono font-bold text-orange-400">React Native App</h2>
+
+								<p className="text-zinc-600 pt-2 text-base">
 									Developed as part of the CetusPro Academy.
 								</p>
 
@@ -164,11 +188,13 @@ function Site() {
 
 							<MiscProjectCard href="https://github.com/blackshibe/luabsge">
 								<h1 className="text-2xl font-bold font-ibm-mono">LuaBSGE</h1>
-								<h2 className="text-1xl font-ibm-mono font-bold text-sky-100">
+								<h2 className="text-1xl font-ibm-mono font-bold text-orange-400">
 									Lua+C rendering engine
 								</h2>
-								<p className="text-zinc-600 pt-4 text-base">
-									Written for fun. Integrates a Lua scripting API with full control over the engine.
+
+								<p className="text-zinc-600 pt-2 text-base">
+									Attempt at an OpenGL+Lua game engine. Integrates a Lua scripting API, although it
+									doesn't work well. I'd like to learn C++ better someday.
 								</p>
 
 								<ProjectTags date="2022">
@@ -179,7 +205,7 @@ function Site() {
 							</MiscProjectCard>
 						</div>
 					</div>
-					<h1 className="text-2xl p-4 font-bold font-ibm-mono text-zinc-200">My Experience</h1>
+					<h1 className="text-2xl p-4 font-bold font-ibm-mono text-zinc-200">General Experience</h1>
 					<div className="h-full grid md:flex justify-center">
 						<div className="p-4 flex flex-col gap-4 w-full md:w-3/5">
 							<ProjectCard href="https://cetuspro.com/en">
@@ -205,8 +231,10 @@ function Site() {
 							</ProjectCard>
 							<ExperienceCard>
 								<h1 className="text-2xl font-bold font-ibm-mono">Web Development</h1>
-								<h2 className="pt-1 pb-1 font-ibm-mono font-bold text-zinc-600">HTML+CSS since 2020</h2>
-								<ul className="pt-2 text-zinc-400 text-base leading-7">
+								<h2 className="pt-1 pb-1 font-ibm-mono font-bold text-zinc-600">
+									HTML+CSS & various web frameworks
+								</h2>
+								<div className="pt-2 text-zinc-400 text-base leading-7">
 									<a
 										href="https://github.com/blackshibe/ts-remind-me"
 										className="text-zinc-400 text-base underline "
@@ -219,13 +247,13 @@ function Site() {
 									<ProjectTags date="">
 										<i className="devicon-typescript-plain"></i>
 									</ProjectTags>
-								</ul>
+								</div>
 							</ExperienceCard>
 
 							<ExperienceCard>
 								<h1 className="text-2xl font-bold font-ibm-mono">Roblox</h1>
 								<h2 className="pt-1 pb-1 font-ibm-mono font-bold text-zinc-600">Luau since 2017</h2>
-								<ul className="pt-2 text-zinc-400 text-base leading-7">
+								<div className="pt-2 text-zinc-400 text-base leading-7">
 									<p>
 										<a
 											href="https://devforum.roblox.com/t/writing-an-fps-framework-2020/503318"
@@ -250,29 +278,36 @@ function Site() {
 										<i className="devicon-lua-plain"></i>
 										<i className="devicon-python-plain"></i>
 									</ProjectTags>
-								</ul>
+								</div>
 							</ExperienceCard>
 
-							<ExperienceCard>
-								<h1 className="text-2xl font-bold font-ibm-mono">Arduino</h1>
-								<h2 className="pt-1 pb-1 font-ibm-mono font-bold text-zinc-600">C++ since 2019</h2>
-								<ul className="pt-2 text-zinc-400 text-base">
-									<p>Soldering, putting together shitty pcb designs</p>
-									<p>
-										Parsing, sending and rendering .obj meshes to a TFT Display controlled by an
-										ESP32
-									</p>
-									<p>
-										DIY RGB strip controller integrated with the adafruit online service for a DIY
-										RGB setup
-									</p>
-									<ProjectTags date="">
-										<i className="devicon-arduino-plain"></i>
-										<i className="devicon-cplusplus-plain"></i>
-										<i className="devicon-python-plain"></i>
-									</ProjectTags>
-								</ul>
-							</ExperienceCard>
+							<ExperienceCardWithImage>
+								<img
+									src="arduino.jpg"
+									alt="Arduino watch"
+									className="from-zinc-900 bg-gradient-to-t rounded-t"
+								/>
+								<div className="p-4">
+									<h1 className="text-2xl font-bold font-ibm-mono">Arduino</h1>
+									<h2 className="pt-1 pb-1 font-ibm-mono font-bold text-zinc-600">C++ since 2019</h2>
+									<div className="pt-2 text-zinc-400 text-base">
+										<p>Soldering, putting together shitty pcb designs</p>
+										<p>
+											Parsing, sending and rendering .obj meshes to a TFT Display controlled by an
+											ESP32
+										</p>
+										<p>
+											DIY RGB strip controller integrated with the adafruit online service for a
+											DIY RGB setup
+										</p>
+										<ProjectTags date="">
+											<i className="devicon-arduino-plain"></i>
+											<i className="devicon-cplusplus-plain"></i>
+											<i className="devicon-python-plain"></i>
+										</ProjectTags>
+									</div>
+								</div>
+							</ExperienceCardWithImage>
 						</div>
 						<div className="p-4 flex flex-col gap-4 w-full md:w-2/5">
 							<ExperienceCard>
@@ -285,6 +320,8 @@ function Site() {
 							<ExperienceCard>
 								<h1 className="text-2xl font-bold font-ibm-mono">Other</h1>
 								<ul className="pt-2 text-zinc-600 text-base">
+									<p>General experience with Git & Github CI pipelines</p>
+									<p>Occasional experience with Mariadb & MySQL</p>
 									<p>General experience with Linux for server hosting and personal use</p>
 									<p>Basics of self-compiling Android, TWRP device recovery bringup</p>
 								</ul>

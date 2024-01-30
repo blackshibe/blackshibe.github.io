@@ -94,18 +94,34 @@ function Site() {
 						<br />
 
 						<div className="text-sm sm:text-base">
-							<p>Hi! i'm blackshibe. I mainly do programming nowadays.</p>
+							<p>
+								Hi! i'm blackshibe. I'm a Polish game developer currently in high school. I mainly code
+								nowadays.
+							</p>
 							<br />
 							<p>
 								Ever since I was 9, I've been playing with electronics. I started programming in 2017
 								and have been busy making games since. I also play guitar now sometimes.
 							</p>
+							<br />
+							<p>
+								I'm proficient in Roblox development but have done fullstack web development and low
+								level programming before. I work at Game Changer right now, with Deadline as my other
+								primary focus.
+							</p>
 						</div>
 					</div>
 
-					<div className="text-left text-white text-1xl gap-1 flex flex-col w-full">
+					<div className="no-print text-left text-white text-1xl gap-1 flex flex-col w-full">
 						<SocialIcon icon={faDiscord} text="blackshibe" />
 						<SocialIcon link="https://github.com/blackshibe" icon={faGithub} text="blackshibe" />
+					</div>
+
+					{/* for printed version */}
+					<div className="only-print text-left text-white text-1xl gap-1 flex flex-col w-full">
+						<p>Email @ blackshibe@tutanota.com</p>
+						<p>Github @ github.com/blackshibe</p>
+						<p>Discord @ blackshibe</p>
 					</div>
 				</div>
 			</div>
@@ -113,13 +129,16 @@ function Site() {
 			{/* 2nd page */}
 			<div className="bg-zinc-800 flex flex-col bg-noise justify-center items-center text-white">
 				<div className="experience-width gap-8 p-2 md:p-8">
-					<h1 className="text-2xl p-4 font-bold font-ibm-mono text-zinc-200">My Projects</h1>
+					{/* projects page 1 */}
+					<h1 className="no-print text-2xl p-4 font-bold font-ibm-mono text-zinc-200">
+						Public stuff I've worked on
+					</h1>
 					<div className="h-full grid md:flex justify-center">
 						<div className="p-4 flex flex-col gap-4 w-full md:w-3/6">
 							<ProjectCard href="https://www.roblox.com/games/3837841034/0-21-6-Deadline">
 								<img
 									src="deadline.png"
-									alt="UMP-45 with a camo"
+									alt="promotional render of an AK74N with the logo of the game overlayed on top"
 									className="from-zinc-900 bg-gradient-to-t rounded-t"
 								/>
 								<div className="p-4">
@@ -162,8 +181,86 @@ function Site() {
 									</ProjectTags>
 								</div>
 							</ProjectCard>
+							<MiscProjectCard href="https://blackshibe.github.io/canim">
+								<h1 className="text-2xl font-bold font-ibm-mono">Canim</h1>
+								<h2 className="text-1xl font-ibm-mono font-bold text-blue-400">
+									Open-source Animation library
+								</h2>
+
+								<p className="text-zinc-600 pt-2 text-base">
+									Public Roblox animation library used in Deadline.
+								</p>
+
+								<ProjectTags date="2022">
+									<i className="devicon-typescript-plain"></i>
+								</ProjectTags>
+							</MiscProjectCard>
 						</div>
 						<div className="p-4 flex flex-col w-full md:w-3/6 gap-4">
+							<ProjectCard href="https://www.game-changer.pl/">
+								<img
+									src="gamechangeragency_cover.jpg"
+									alt="GameChanger logo"
+									className="from-zinc-900 bg-gradient-to-t rounded-t"
+								/>
+								<div className="p-4">
+									<Header header="Game Changer" footer="Game Development & Marketing" />
+
+									<p className="text-zinc-400 text-base">
+										I was hired to work on fixing and developing Roblox games for clients under Game
+										Changer in December 2023.
+									</p>
+
+									<ul className="text-zinc-500 text-base list-disc list-inside pt-4">
+										<li>ING Bank Polska - minor work</li>
+										<li>
+											Samsung - ReactLua & Reflex powered player-customizable station and a fake
+											declaratively programmed samsung phone interface with pretty looking
+											animations, along with general bugfixing and optimization work
+										</li>
+									</ul>
+
+									<ProjectTags date="2023-2024">
+										<i className="devicon-lua-plain"></i>
+									</ProjectTags>
+								</div>
+							</ProjectCard>
+							<ProjectCard href="https://cetuspro.com/en">
+								<img
+									src="logo-dark.jpg"
+									alt="CetusPro logo"
+									className="from-zinc-900 bg-gradient-to-t rounded-t"
+								/>
+								<div className="p-4">
+									<Header header="CetusPro" footer="Software & Technology" />
+
+									<p className="text-zinc-400 text-base">
+										I got an internship at CetusPro as part of the CetusPro Academy. I worked on
+										React websites during my time there.
+									</p>
+
+									<ul className="text-zinc-500 text-base list-disc list-inside pt-4">
+										<li>
+											<a
+												href="https://github.com/blackshibe/remind-me-notes"
+												className="text-zinc-500 text-base underline "
+											>
+												Academy project: Remind Me Notes
+											</a>
+										</li>
+										<li>Internship (Jan 2023 - March 2023)</li>
+									</ul>
+
+									<ProjectTags date="2023">
+										<i className="devicon-typescript-plain"></i>
+									</ProjectTags>
+								</div>
+							</ProjectCard>
+						</div>
+					</div>
+					<h1 className="no-print text-2xl p-4 font-bold font-ibm-mono text-zinc-200">Other stuff I did</h1>
+					<div className="h-full grid md:flex justify-center">
+						<div className="p-4 flex flex-col gap-4 w-full md:w-2/4">
 							<ProjectCard href="https://black-shibe.itch.io/shroom-rampage">
 								<img
 									src="jam.png"
@@ -194,34 +291,6 @@ function Site() {
 								</div>
 							</ProjectCard>
 
-							<MiscProjectCard href="https://blackshibe.github.io/canim">
-								<h1 className="text-2xl font-bold font-ibm-mono">Canim</h1>
-								<h2 className="text-1xl font-ibm-mono font-bold text-blue-400">Open-source Animator</h2>
-
-								<p className="text-zinc-600 pt-2 text-base">
-									Open-source Roblox animation library used in Deadline.
-								</p>
-
-								<ProjectTags date="2022">
-									<i className="devicon-typescript-plain"></i>
-								</ProjectTags>
-							</MiscProjectCard>
-
-							<MiscProjectCard href="https://github.com/blackshibe/remind-me-notes">
-								<h1 className="text-2xl font-bold font-ibm-mono">Remind Me</h1>
-								<h2 className="text-1xl font-ibm-mono font-bold text-blue-400">React Native App</h2>
-
-								<p className="text-zinc-600 pt-2 text-base">
-									Developed as part of the CetusPro Academy.
-								</p>
-
-								<ProjectTags date="2022">
-									<i className="devicon-typescript-plain"></i>
-									<i className="devicon-react-original"></i>
-									<i className="devicon-android-plain"></i>
-								</ProjectTags>
-							</MiscProjectCard>
-
 							<MiscProjectCard href="https://github.com/blackshibe/luabsge">
 								<h1 className="text-2xl font-bold font-ibm-mono">LuaBSGE</h1>
 								<h2 className="text-1xl font-ibm-mono font-bold text-blue-400">
@@ -229,8 +298,9 @@ function Site() {
 								</h2>
 
 								<p className="text-zinc-600 pt-2 text-base">
-									Attempt at an OpenGL+Lua game engine. Integrates a Lua scripting API, although it
-									doesn't work well. I'd like to learn C++ better someday.
+									Attempt at an OpenGL+Lua game engine. Integrates a Lua scripting API without any
+									high-level libraries for making that more convenient. I'd like to learn C++ better
+									someday.
 								</p>
 
 								<ProjectTags date="2022">
@@ -239,32 +309,32 @@ function Site() {
 									<i className="devicon-opengl-plain"></i>
 								</ProjectTags>
 							</MiscProjectCard>
-						</div>
-					</div>
-					<h1 className="text-2xl p-4 font-bold font-ibm-mono text-zinc-200">General Experience</h1>
-					<div className="h-full grid md:flex justify-center">
-						<div className="p-4 flex flex-col gap-4 w-full md:w-3/5">
-							<ProjectCard href="https://cetuspro.com/en">
-								<img
-									src="logo-dark.jpg"
-									alt="CetusPro logo"
-									className="from-zinc-900 bg-gradient-to-t rounded-t"
-								/>
-								<div className="p-4">
-									<Header header="CetusPro" footer="Software & Technology" />
-									<a
-										href="https://github.com/blackshibe/remind-me-notes"
-										className="text-zinc-400 text-base underline "
-									>
-										Academy project: Remind Me Notes
-									</a>
-									<p className="text-zinc-400 text-base">Internship (Jan 2023 - March 2023)</p>
 
+							<ExperienceCard>
+								<h1 className="text-2xl font-bold font-ibm-mono">Arduino</h1>
+								<h2 className="pt-1 pb-1 font-ibm-mono font-bold text-zinc-600">C++ since 2019</h2>
+								<ul className="text-zinc-500 text-base list-disc list-inside pt-4">
+									<li>Soldering, putting together shitty pcb designs</li>
+									<li>
+										Parsing, sending and rendering .obj meshes to a TFT Display controlled by an
+										ESP32
+									</li>
+									<li>
+										a DIY RGB light setup for my PC integrating a light strip and the adafruit
+										online service
+									</li>
+								</ul>
+
+								<div className="pt-2 text-zinc-400 text-base">
 									<ProjectTags date="">
-										<i className="devicon-typescript-plain"></i>
+										<i className="devicon-arduino-plain"></i>
+										<i className="devicon-cplusplus-plain"></i>
+										<i className="devicon-python-plain"></i>
 									</ProjectTags>
 								</div>
-							</ProjectCard>
+							</ExperienceCard>
+						</div>
+						<div className="p-4 flex flex-col gap-4 w-full md:w-2/4">
 							<ExperienceCard>
 								<h1 className="text-2xl font-bold font-ibm-mono">Web Development</h1>
 								<h2 className="pt-1 pb-1 font-ibm-mono font-bold text-zinc-600">
@@ -278,7 +348,7 @@ function Site() {
 										Reminder app written with Angular
 									</a>
 									<p>Simple, Sentry inspired error tracker</p>
-									<p>Server hosting with Azure & AWS</p>
+									<p>Server hosting & upkeep with Azure & AWS for Deadline</p>
 
 									<ProjectTags date="">
 										<i className="devicon-typescript-plain"></i>
@@ -307,9 +377,6 @@ function Site() {
 										</a>
 									</p>
 
-									<p>Long time user of Rojo & Roblox-ts</p>
-									<p>Experience with Roact + Rodux</p>
-
 									<ProjectTags date="">
 										<i className="devicon-lua-plain"></i>
 										<i className="devicon-python-plain"></i>
@@ -317,35 +384,6 @@ function Site() {
 								</div>
 							</ExperienceCard>
 
-							<ExperienceCardWithImage>
-								<img
-									src="arduino.jpg"
-									alt="Arduino watch"
-									className="from-zinc-900 bg-gradient-to-t rounded-t"
-								/>
-								<div className="p-4">
-									<h1 className="text-2xl font-bold font-ibm-mono">Arduino</h1>
-									<h2 className="pt-1 pb-1 font-ibm-mono font-bold text-zinc-600">C++ since 2019</h2>
-									<div className="pt-2 text-zinc-400 text-base">
-										<p>Soldering, putting together shitty pcb designs</p>
-										<p>
-											Parsing, sending and rendering .obj meshes to a TFT Display controlled by an
-											ESP32
-										</p>
-										<p>
-											DIY RGB strip controller integrated with the adafruit online service for a
-											DIY RGB setup
-										</p>
-										<ProjectTags date="">
-											<i className="devicon-arduino-plain"></i>
-											<i className="devicon-cplusplus-plain"></i>
-											<i className="devicon-python-plain"></i>
-										</ProjectTags>
-									</div>
-								</div>
-							</ExperienceCardWithImage>
-						</div>
-						<div className="p-4 flex flex-col gap-4 w-full md:w-2/5">
 							<ExperienceCard>
 								<h1 className="text-2xl font-bold font-ibm-mono">Unity</h1>
 								<ul className="pt-2  text-zinc-600 text-base">

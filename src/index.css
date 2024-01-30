@@ -66,3 +66,17 @@ body {
 :root {
 	scrollbar-color: #464646 #1c1c1c;
 }
+
+.only-print {
+	display: none !important;
+}
+
+@media print {
+	.no-print {
+		display: none !important;
+	}
+
+	.only-print {
+		display: block !important;
+	}
+}

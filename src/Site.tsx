@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import "./index.css";
 
-import snow from "./wallpaper/snow.jpeg";
+import snow from "./wallpaper/sky.jpg";
 
 function ProjectCard({ children, href }: React.PropsWithChildren<{ href?: string }>) {
 	return (
@@ -59,7 +59,7 @@ function Header({ header, footer, href }: { header: string; footer: string; href
 			<a href={href} className="text-2xl font-bold font-ibm-mono ease-in-out duration-100">
 				{header}
 			</a>
-			<h2 className="text-1xl font-ibm-mono font-bold text-orange-400 pb-4">{footer}</h2>
+			<h2 className="text-1xl font-ibm-mono font-bold text-blue-400 pb-4">{footer}</h2>
 		</>
 	);
 }
@@ -74,20 +74,31 @@ function Site() {
 			className="font-sans leading-6 font-poppins text-left text-lg bg-image underline-offset-4"
 		>
 			<div className="from-zinc-900 bg-gradient-to-t flex justify-between flex-row">
-				<div className="card-width flex justify-between flex-col h-screen p-8 md:p-16 text-zinc-200">
+				<div className="card-width flex justify-between flex-col h-screen p-8 md:p-20 text-zinc-200">
 					<div />
 
-					<div>
-						<h1 className="text-4xl md:text-6xl font-bold font-ibm-mono">blackshibe</h1>
-						<h2 className="text-1xl font-ibm-mono font-bold text-orange-400">foxes & text editors</h2>
+					<div className="half-transparent rounded-t pd-4 h-auto p-4 md:-4">
+						<div className="flex flex-row gap-4">
+							<img
+								src="fox.webp"
+								className="rounded-full shadow-xl hidden sm:block"
+								height={90}
+								width={90}
+							/>
+							<div className="flex flex-col justify-center">
+								<h1 className="text-4xl md:text-6xl font-bold font-ibm-mono">blackshibe</h1>
+								<h2 className="text-1xl font-ibm-mono font-bold text-blue-400">foxes & text editors</h2>
+							</div>
+						</div>
 
 						<br />
 
-						<div className="text-sm sm:text-base pb-16">
+						<div className="text-sm sm:text-base">
 							<p>Hi! i'm blackshibe. I mainly do programming nowadays.</p>
+							<br />
 							<p>
 								Ever since I was 9, I've been playing with electronics. I started programming in 2017
-								and have been busy making games since.
+								and have been busy making games since. I also play guitar now sometimes.
 							</p>
 						</div>
 					</div>
@@ -96,9 +107,6 @@ function Site() {
 						<SocialIcon icon={faDiscord} text="blackshibe" />
 						<SocialIcon link="https://github.com/blackshibe" icon={faGithub} text="blackshibe" />
 					</div>
-				</div>
-				<div className="card-width flex justify-end items-end text-white p-16 invisible md:visible opacity-50">
-					More info below
 				</div>
 			</div>
 
@@ -140,7 +148,7 @@ function Site() {
 											An integrated custom scripting language written in collaboration with{" "}
 											<a
 												href="http://github.com/phunanon"
-												className="text-orange-400 text-underline"
+												className="text-blue-400 text-underline"
 											>
 												phunanon
 											</a>{" "}
@@ -156,11 +164,39 @@ function Site() {
 							</ProjectCard>
 						</div>
 						<div className="p-4 flex flex-col w-full md:w-3/6 gap-4">
+							<ProjectCard href="https://black-shibe.itch.io/shroom-rampage">
+								<img
+									src="jam.png"
+									alt="UMP-45 with a camo"
+									className="from-zinc-900 bg-gradient-to-t rounded-t"
+								/>
+								<div className="p-4">
+									<Header header="Shroompage" footer="Godot Game Jam game" />
+
+									<p className="text-zinc-400 text-base">
+										72 hour game jam I was invited to. I was involved in:
+									</p>
+
+									<ul className="text-zinc-500 text-base list-disc list-inside pt-4">
+										<li>
+											Game design - I designed a forest level without prior experience with Godot
+										</li>
+										<li>Some of the models, made with Blender and Substance Painter</li>
+										<li>
+											All of the music (Composed in FL studio & partially recorded with a guitar)
+										</li>
+									</ul>
+
+									<ProjectTags date="2023">
+										<i className="devicon-godot-plain"></i>
+										<i className="devicon-csharp-plain"></i>
+									</ProjectTags>
+								</div>
+							</ProjectCard>
+
 							<MiscProjectCard href="https://blackshibe.github.io/canim">
 								<h1 className="text-2xl font-bold font-ibm-mono">Canim</h1>
-								<h2 className="text-1xl font-ibm-mono font-bold text-orange-400">
-									Open-source Animator
-								</h2>
+								<h2 className="text-1xl font-ibm-mono font-bold text-blue-400">Open-source Animator</h2>
 
 								<p className="text-zinc-600 pt-2 text-base">
 									Open-source Roblox animation library used in Deadline.
@@ -173,7 +209,7 @@ function Site() {
 
 							<MiscProjectCard href="https://github.com/blackshibe/remind-me-notes">
 								<h1 className="text-2xl font-bold font-ibm-mono">Remind Me</h1>
-								<h2 className="text-1xl font-ibm-mono font-bold text-orange-400">React Native App</h2>
+								<h2 className="text-1xl font-ibm-mono font-bold text-blue-400">React Native App</h2>
 
 								<p className="text-zinc-600 pt-2 text-base">
 									Developed as part of the CetusPro Academy.
@@ -188,7 +224,7 @@ function Site() {
 
 							<MiscProjectCard href="https://github.com/blackshibe/luabsge">
 								<h1 className="text-2xl font-bold font-ibm-mono">LuaBSGE</h1>
-								<h2 className="text-1xl font-ibm-mono font-bold text-orange-400">
+								<h2 className="text-1xl font-ibm-mono font-bold text-blue-400">
 									Lua+C rendering engine
 								</h2>
 

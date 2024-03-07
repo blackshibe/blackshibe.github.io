@@ -5,20 +5,12 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-	--github-social: rgb(104, 108, 148);
-	--yt-social: rgb(251, 59, 59);
-	--email-social: #970012;
-	--telegram-social: #3867d5;
-	--disc-social: rgb(99, 99, 200);
-}
-
 body {
 	margin: 0;
 }
 
 .font-ibm-mono {
-	font-family: "Quicksand", sans-serif;
+	font-family: "IBM Plex Mono", monospace;
 }
 
 .font-poppins {
@@ -37,20 +29,6 @@ body {
 	height: 100vh;
 }
 
-.bg-ump {
-	background-image: url("../public/ump.png");
-	background-position: center;
-	background-size: cover;
-	aspect-ratio: 16 / 9;
-	image-rendering: unset;
-}
-
-.bg-noise {
-	background-image: url("../public/noise.png");
-	background-size: 500px;
-	image-rendering: pixelated;
-}
-
 .experience-width {
 	width: min(1200px, 100%);
 }
@@ -65,18 +43,22 @@ body {
 
 :root {
 	scrollbar-color: #464646 #1c1c1c;
+	--text-color: #d2d2d2;
+	--bg-color: #2b2b2b;
 }
 
-.only-print {
-	display: none !important;
+.custom-bg-opaque {
+	background-color: rgb(0, 0, 0, 60%);
+	color: var(--text-color);
 }
 
-@media print {
-	.no-print {
-		display: none !important;
-	}
+a:hover {
+	background-color: var(--text-color);
+	color: var(--bg-color);
+}
 
-	.only-print {
-		display: block !important;
-	}
+hr {
+	width: 100%;
+	border-color: var(--text-color);
+	opacity: 50%;
 }

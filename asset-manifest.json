@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.a5578837.css",
-    "main.js": "/static/js/main.8ee92055.js",
-    "static/media/RBA_01.png": "/static/media/RBA_01.47cd19765ebf84c958fa.png",
+    "main.css": "/static/css/main.6d3b3fda.css",
+    "main.js": "/static/js/main.a07ee50f.js",
+    "static/media/RBA_01.png": "/static/media/RBA_01.f563eee809c1e37495e6.png",
     "index.html": "/index.html",
-    "main.a5578837.css.map": "/static/css/main.a5578837.css.map",
-    "main.8ee92055.js.map": "/static/js/main.8ee92055.js.map"
+    "main.6d3b3fda.css.map": "/static/css/main.6d3b3fda.css.map",
+    "main.a07ee50f.js.map": "/static/js/main.a07ee50f.js.map"
   },
   "entrypoints": [
-    "static/css/main.a5578837.css",
-    "static/js/main.8ee92055.js"
+    "static/css/main.6d3b3fda.css",
+    "static/js/main.a07ee50f.js"
   ]
 }

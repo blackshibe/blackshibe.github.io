@@ -1,6 +1,6 @@
 import "./index.css";
 
-import snow from "./wallpaper/RBA_01.png";
+import snow from "./RBA_01.png";
 
 function Site() {
 	let banners = [snow];

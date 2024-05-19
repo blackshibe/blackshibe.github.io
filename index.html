@@ -51,7 +51,7 @@
 	</body>
 	<script>
 		let pages = ["https://erizo.cc/", "http://rxn.lol/"];
-		let random_index = Math.round(Math.random() * pages.length);
+		let random_index = Math.floor(Math.random() * pages.length);
 
 		document.getElementById("random-tag").setAttribute("href", pages[random_index]);
 	</script>

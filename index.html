@@ -36,13 +36,23 @@
 
 							<hr />
 
+							<a href="https://twitter.com/Serpent____x">the man behind the art on this page</a>
+							<a href="" id="random-tag">visit a friendly website</a>
+
+							<hr />
+
 							<a href="page/music.html">music archive</a>
 							<a href="page/wallpapers.html">wallpaper archive</a>
-							<a href="https://twitter.com/Serpent____x">the man behind the art on this page</a>
 						</div>
 					</div>
 				</article>
 			</div>
 		</div>
 	</body>
+	<script>
+		let pages = ["https://erizo.cc/", "http://rxn.lol/"];
+		let random_index = Math.round(Math.random() * pages.length);
+
+		document.getElementById("random-tag").setAttribute("href", pages[random_index]);
+	</script>
 </html>

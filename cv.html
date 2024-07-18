@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<style>
+			body {
+				margin: 0;
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				gap: 1rem;
+			}
+
+			.page {
+				width: 21cm;
+				min-height: 29.7cm;
+				padding: 1cm;
+				margin: 1cm 0cm;
+				border: 1px black solid;
+				background: white;
+			}
+
+			li {
+				margin-left: 1rem;
+				list-style-type: circle;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="page font-sans">
+			<header class="p-2">
+				<h1 class="text-4xl font-bold">Kacper Szczepan</h1>
+				<h1 class="text-1xl mt-2 opacity-50">My Portfolio</h1>
+			</header>
+
+			<hr class="mt-2 mb-2" />
+
+			<div class="p-2">
+				<h1 class="text-2xl font-semibold mb-2">About Me</h1>
+
+				<p>
+					I'm an 18 yr old hobbyist programmer starting out my career. I like solving problems and working
+					towards a common goal. I started out on Roblox in 2017 and have since gotten experience in many
+					different areas of programming and IT.
+				</p>
+
+				<p class="mt-2">
+					I like learning new things and I'm looking to branch out into backend code development in C# and/or
+					C++ right now.
+				</p>
+
+				<div class="grid grid-cols-2 mt-2">
+					<div>
+						<p class="opacity-50">Email</p>
+						<p>kacperszczepan@tutanota.com</p>
+					</div>
+					<div>
+						<p class="opacity-50">Github</p>
+						<p>blackshibe</p>
+					</div>
+				</div>
+			</div>
+
+			<hr class="mt-2 mb-2" />
+
+			<div class="p-2">
+				<h1 class="text-2xl font-semibold mb-2">Education</h1>
+
+				<div class="flex justify-between">
+					<p class="text-lg">Tech school Nr. 9 Im. Matuszczaka, Rzeszów</p>
+					<p class="text-lg">2021 - Now</p>
+				</div>
+				<div class="opacity-80">
+					<p>
+						Programming course - Learning JavaScript, HTML+CSS, PHP, MySQL, MFC, C++ with OOP, .NET C#,
+						Android apps, React over a 5 year course
+					</p>
+				</div>
+			</div>
+
+			<div class="p-2">
+				<h1 class="text-2xl font-semibold mb-2">Previous experience</h1>
+
+				<div class="mt-2">
+					<div class="flex justify-between">
+						<p class="text-lg">
+							<a href="https://www.game-changer.pl/" class="text-blue-600">Game Changer</a> - Game
+							Developer
+						</p>
+						<p class="text-lg">Dec 2023 - July 2024</p>
+					</div>
+					<div class="m-2 opacity-80">
+						<ul>
+							<li>
+								Migrating the studio to a Rojo+Git based workflow to increase productivity with the
+								development of Samsung Station including tutoring others on the team on best practices
+								and setting up the project
+							</li>
+							<li>
+								Implementing major features for Galaxy Station, including a fake Samsung phone with
+								various apps and animations, and a tycoon base building feature
+							</li>
+							<li>Implementing mechanics for ING City, Skoda Bike Planet, Virtual Vibes Festival</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="mt-2">
+					<div class="flex justify-between">
+						<p class="text-lg">
+							<a href="https://www.roblox.com/games/3837841034/0-22-12-Deadline" class="text-blue-600"
+								>Deadline</a
+							>
+							- Project lead, Programmer
+						</p>
+						<p class="text-lg">2019 - Now</p>
+					</div>
+					<div class="opacity-80 mt-2">
+						<p>
+							Deadline is an FPS focused on bringing the most complex gun customization in the world to a
+							realistic shooter game. We have over 20M game plays and have 200 thousand active players
+							every month. At the game's peak 1.5k players were playing at the same time.
+						</p>
+
+						<ul>
+							<li>
+								The game itself is written in Luau+Typescript, UI is implemented in Roblox equivalents
+								of React+Redux
+							</li>
+							<li>
+								There's a backend implemented in express+typescript with a MySQL database that includes
+								messaging service that integrates the website with the game
+							</li>
+							<li>
+								I implemented a custom character controller & netcode that implements bit buffers for
+								serialization and buffer rollback for a stable player experience and a custom optimized
+								animation engine that implements animation retargeting and layering
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<footer class="text-sm text-center mt-4 opacity-50">18/07/2024</footer>
+			</div>
+		</div>
+		<div class="page font-sans">
+			<header class="p-2">
+				<h1 class="text-4xl font-bold">Personal Projects</h1>
+			</header>
+
+			<hr class="mt-10 mb-2" />
+
+			<div class="p-2">
+				<h1 class="text-2xl font-semibold mb-2">Github</h1>
+
+				<div class="mt-2">
+					<div class="flex justify-between">
+						<p class="text-lg">
+							<a href="https://black-shibe.itch.io/shroom-rampage" class="text-blue-600"
+								>rxn7/shroompage-jam-version</a
+							>
+							- Godot gamejam game
+						</p>
+						<p class="text-lg">2023</p>
+					</div>
+					<div class="m-2 opacity-80">
+						<ul>
+							<li>Developed with a few of my friends in the PJP 2023-2 jam</li>
+							<li>We started and finished in 3 days with zero previous Godot knowledge</li>
+							<li>
+								I composed the soundtrack, designed the levels and gameplay, and helped write code for
+								the UI and soundtrack as well as tutorial in C#.
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="mt-2">
+					<div class="flex justify-between">
+						<p class="text-lg">
+							<a href="https://github.com/blackshibe/remind-me-notes" class="text-blue-600"
+								>blackshibe/remind-me-notes</a
+							>
+							- React Native reminder app
+						</p>
+						<p class="text-lg">2023</p>
+					</div>
+					<div class="m-2 opacity-80">
+						<ul>
+							<li>Developed as part of CetusPro academy</li>
+							<li>Can add text notes, images, reminders with light and dark theme</li>
+							<li>React Native w/ Redux integration for easily backing up restoring user data</li>
+							<li>Firebase with account login option and handling data conflicts when loading</li>
+							<li>I still use this app for keeping track of things</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="mt-2">
+					<div class="flex justify-between">
+						<p class="text-lg">
+							<a href="https://github.com/blackshibe/luabsge" class="text-blue-600">blackshibe/luabsge</a>
+							- C++ & Lua game engine prototype
+						</p>
+						<p class="text-lg">2021</p>
+					</div>
+					<div class="m-2 opacity-80">
+						<ul>
+							<li>Developed with learnopengl.com</li>
+							<li>Loading meshes with textures, text, hooking to render loop with Lua C API</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="mt-2">
+					<div class="flex justify-between">
+						<p class="text-lg">
+							<a href="https://github.com/blackshibe/tonk-warfare" class="text-blue-600"
+								>blackshibe/tonk-warfare</a
+							>
+							- Unity multiplayer prototype with C# netcode
+						</p>
+						<p class="text-lg">2022</p>
+					</div>
+					<div class="m-2 opacity-80">
+						<ul>
+							<li>
+								<a href="https://youtu.be/hUowbZXjVKc" class="text-blue-600"
+									>Successor to a gamejam game called tonk warfare on Roblox that I wrote</a
+								>
+							</li>
+							<li>Simple client/server architecture</li>
+							<li>Fake hookes law' based tank suspension with 4 wheels</li>
+							<li>Can join, type in the chat, see other players move</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="mt-2">
+					<div class="flex justify-between">
+						<p class="text-lg">blackshibe/turret - Sentry inspired error tracker</p>
+						<p class="text-lg">2020</p>
+					</div>
+					<div class="m-2 opacity-80">
+						<ul>
+							<li>Javascript & React, Express with MariaDB integration</li>
+							<li>Simple API for submitting logs</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="mt-2">
+					<div class="flex justify-between">
+						<p class="text-lg">blackshibe/ts-remind-me - Reminder app for the desktop</p>
+						<p class="text-lg">2021</p>
+					</div>
+					<div class="m-2 opacity-80">
+						<ul>
+							<li>Electron with Angular & Typescript for UI</li>
+							<li>Supports notes & images, human-friendly notification dates like "in an hour"</li>
+							<li>Test project for trying out Electron</li>
+						</ul>
+					</div>
+				</div>
+
+				<footer class="text-sm text-center mt-32 opacity-50">18/07/2024</footer>
+			</div>
+		</div>
+	</body>
+</html>

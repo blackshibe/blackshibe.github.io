@@ -3,13 +3,15 @@
 @tailwind utilities;
 
 @font-face {
-	font-family: "Roboto Mono";
-	src: url(font/RobotoMono-VariableFont_wght.ttf);
+	font-family: "Noto Sans";
+	src: url(font/NotoSans-VariableFont.ttf);
 }
 
 body {
 	margin: 0;
 	min-height: 100vh;
+
+	font-family: "Noto Sans", sans-serif;
 
 	/* nojs support */
 	background-color: var(--bg-color);
@@ -26,13 +28,6 @@ body {
 .disable-filtering {
 	image-rendering: pixelated;
 	image-rendering: crisp-edges;
-}
-
-.font-custom {
-	font-family: "Roboto Mono", monospace;
-	font-optical-sizing: auto;
-	font-weight: 400;
-	font-style: normal;
 }
 
 * {
@@ -68,29 +63,4 @@ hr {
 	width: 100%;
 	border-color: var(--text-color);
 	opacity: 50%;
-}
-
-.bg-image-1 {
-	background-position: center;
-	background-image: url("../img/RBA_01.png");
-	z-index: -1;
-}
-
-.bg-image-2 {
-	background-position: center;
-	/* background-image: url("../img/music.png"); */
-	z-index: -1;
-}
-
-.bg-image-3 {
-	background-position: center;
-	background-image: url("../img/art.png");
-	z-index: -1;
-}
-
-.bg-image-4 {
-	background-position: center;
-	background-size: cover;
-	background-image: url("../img/wallpapers.png");
-	z-index: -1;
 }

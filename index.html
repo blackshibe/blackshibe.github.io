@@ -16,48 +16,60 @@
 		<title>welcome - blackshibe</title>
 	</head>
 	<body class="font-custom leading-6 bg-image-1">
-		<div class="custom-bg-opaque">
-			<div class="custom-site-content">
-				<article class="flex flex-col gap-2 justify-center items-start h-screen">
-					<div class="flex gap-10 items-center flex-col lg:flex-row">
-						<img src="img/pfp.png" alt="Fox with a strawberry" class="disable-filtering" />
-						<div class="flex flex-col gap-1 md:p-4 text-xs md:text-base">
-							<p>blackshibe</p>
-							<p class="half-opacity">professional programmer & hobbyist musician</p>
+		<div class="custom-site-content">
+			<div class="flex justify-center items-center col md:flex-row">
+				<div class="flex flex-col gap-2 p-4">
+					<div class="grid grid-cols-3 gap-4 items-center">
+						<img
+							src="img/pfp.png"
+							alt="Fox with a strawberry"
+							class="disable-filtering md:hidden"
+							style="width: 128px"
+						/>
 
+						<div class="w-100 col-span-2">
+							<p class="text-4xl font-light">blackshibe</p>
 							<hr />
 
-							<p>foxes and text editors</p>
-							<p>the world is a fuck</p>
-							<p>all good things must end</p>
-							<p class="half-opacity">thanks, Jax</p>
-
-							<hr />
-
-							<p>blackshibe@tutanota.com by email</p>
-							<p>@blackshibe on discord</p>
-							<p>@blackshibe on github</p>
-							<p>@shibesongs on soundcloud</p>
-
-							<hr />
-
-							<a href="" id="random-tag">visit a friendly website</a>
-
-							<hr />
-
-							<a href="page/music.html">my music</a>
-							<a href="page/blog.html">my blog</a>
-							<a href="page/wallpapers.html">my photos</a>
+							<p class="opacity-50">foxes and text editors</p>
+							<p class="opacity-50">thanks, Jax</p>
 						</div>
 					</div>
-				</article>
+
+					<div class="grid">
+						<p class="text-4xl font-light">contact</p>
+						<hr />
+
+						<p>email: blackshibe@tutanota.com</p>
+						<p>discord: @blackshibe</p>
+						<p>github: @blackshibe</p>
+						<p>soundcloud: @shibesongs</p>
+					</div>
+
+					<div class="grid">
+						<p class="text-4xl font-light">links</p>
+						<hr />
+
+						<a href="https://builds.blackshibe.net">builds.blackshibe.net - my android builds</a>
+						<a href="page/blog.html">blackshibe.net - my music</a>
+						<a href="page/blog.html">blackshibe.net - my blog</a>
+						<a href="page/wallpapers.html">blackshibe.net - my photos</a>
+
+						<div class="mt-2"></div>
+
+						<a href="" id="random-tag" class="hidden">visit a friendly website</a>
+					</div>
+				</div>
+				<img src="img/pfp.png" alt="Fox with a strawberry" class="disable-filtering hidden md:inline" />
 			</div>
 		</div>
 	</body>
 	<script>
 		let pages = ["https://erizo.cc/", "http://rxn.lol/"];
 		let random_index = Math.floor(Math.random() * pages.length);
+		let random_tag = document.getElementById("random-tag");
 
-		document.getElementById("random-tag").setAttribute("href", pages[random_index]);
+		random_tag.classList.remove("hidden");
+		random_tag.setAttribute("href", pages[random_index]);
 	</script>
 </html>

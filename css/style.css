@@ -21,8 +21,8 @@ body {
 
 	scrollbar-color: #464646 #1c1c1c;
 	--text-color: #ffffff;
-	--link-color: #fff9cc;
-	--bg-color: #2f2f2f;
+	--link-color: #9db4ff;
+	--bg-color: #000000;
 }
 
 .disable-filtering {
@@ -53,10 +53,6 @@ a {
 a:hover {
 	background-color: var(--link-color);
 	color: var(--bg-color) !important;
-}
-
-img {
-	margin-top: 1rem;
 }
 
 hr {

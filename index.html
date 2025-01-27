@@ -16,54 +16,60 @@
 		<title>welcome - blackshibe</title>
 	</head>
 	<body class="font-custom leading-6 bg-image-1">
-		<div class="custom-site-content">
-			<div class="flex justify-center items-center col md:flex-row">
-				<div class="flex flex-col gap-2 p-4">
-					<div class="grid grid-cols-3 gap-4 items-center">
-						<img
-							src="img/pfp.png"
-							alt="Fox with a strawberry"
-							class="disable-filtering md:hidden"
-							style="width: 128px"
-						/>
+		<canvas id="main-canvas" class="absolute w-screen h-screen left-0 top-0"></canvas>
 
-						<div class="w-100 md:col-span-3 col-span-2">
+		<div class="h-screen left-0 top-0 flex justify-center items-center">
+			<canvas id="img-canvas" class="glitch-image hidden lg:inline lg:p-8"></canvas>
+
+			<!-- <img src="page/photo/2024-12-23/20241223_001007168.jpg" class="h-screen z-10 p-8" /> -->
+			<div class="custom-site-content">
+				<div class="justify-center items-center col md:flex-row">
+					<div class="flex flex-col gap-2 p-4">
+						<div class="grid">
 							<p class="text-4xl font-light">blackshibe</p>
-							<hr />
 
-							<p class="opacity-50">foxes and text editors</p>
-							<p class="opacity-50">thanks, Jax</p>
+							<p class="opacity-80">though the stars may shine</p>
+							<p class="opacity-80">thanks, jax</p>
+						</div>
+
+						<div class="grid">
+							<p class="text-4xl font-light">contact</p>
+
+							<p class="opacity-80">email: blackshibe@tutanota.com</p>
+							<p class="opacity-80">discord: @blackshibe</p>
+							<p class="opacity-80">github: @blackshibe</p>
+							<p class="opacity-80">soundcloud: @shibesongs</p>
+						</div>
+
+						<div class="grid">
+							<p class="text-4xl font-light">links</p>
+
+							<a class="opacity-80" href="https://builds.blackshibe.net"
+								>builds.blackshibe.net - my android builds</a
+							>
+							<a class="opacity-80" href="page/music.html">blackshibe.net - my music</a>
+							<a class="opacity-80" href="page/blog.html">blackshibe.net - my blog</a>
+							<a class="opacity-80" href="page/wallpapers.html">blackshibe.net - my photos</a>
+
+							<div class="mt-2"></div>
+
+							<a class="opacity-80" href="" id="random-tag" class="hidden">visit a friendly website</a>
 						</div>
 					</div>
-
-					<div class="grid">
-						<p class="text-4xl font-light">contact</p>
-						<hr />
-
-						<p>email: blackshibe@tutanota.com</p>
-						<p>discord: @blackshibe</p>
-						<p>github: @blackshibe</p>
-						<p>soundcloud: @shibesongs</p>
-					</div>
-
-					<div class="grid">
-						<p class="text-4xl font-light">links</p>
-						<hr />
-
-						<a href="https://builds.blackshibe.net">builds.blackshibe.net - my android builds</a>
-						<a href="page/music.html">blackshibe.net - my music</a>
-						<a href="page/blog.html">blackshibe.net - my blog</a>
-						<a href="page/wallpapers.html">blackshibe.net - my photos</a>
-
-						<div class="mt-2"></div>
-
-						<a href="" id="random-tag" class="hidden">visit a friendly website</a>
-					</div>
 				</div>
-				<img src="img/pfp.png" alt="Fox with a strawberry" class="disable-filtering hidden md:inline" />
 			</div>
 		</div>
 	</body>
+
+	<script id="glitch-frag" type="x-shader/x-fragment" src="webgl/shader/glitch-frag.glsl"></script>
+	<script id="glitch-vert" type="x-shader/x-vertex" src="webgl/shader/glitch-vert.glsl"></script>
+	<script id="noise-frag" type="x-shader/x-fragment" src="webgl/shader/noise-frag.glsl"></script>
+	<script id="noise-vert" type="x-shader/x-vertex" src="webgl/shader/noise-vert.glsl"></script>
+
+	<script src="webgl/utils.js"></script>
+	<script src="webgl/noise.js"></script>
+	<script src="webgl/glitch.js"></script>
+
 	<script>
 		let pages = ["https://erizo.cc/", "http://rxn.lol/"];
 		let random_index = Math.floor(Math.random() * pages.length);

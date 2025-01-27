@@ -13,6 +13,11 @@
 	width: fit-content;
 }
 
+.glitch-image {
+	width: 650px;
+	height: 650px;
+}
+
 .custom-heading {
 	font-size: 1.5rem;
 	font-weight: bold;

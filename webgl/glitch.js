@@ -7,15 +7,25 @@ function loadImage(src) {
 	});
 }
 
+function setRectangle(gl, x, y, width, height) {
+	var x1 = x;
+	var x2 = x + width;
+	var y1 = y;
+	var y2 = y + height;
+	gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([x1, y1, x2, y1, x1, y2, x1, y2, x2, y1, x2, y2]), gl.STATIC_DRAW);
+}
+
 async function render() {
 	let imageIndex = Math.floor(Math.random() * 9) + 1;
+	let inversionIndex = Math.floor(Math.random() * 9) + 1;
 	let invert = [false, true, false, false, false, false, false, false, false];
 	let skip_text = Math.random() > 0.6;
 	const image = await loadImage(`webgl/texture/active-${imageIndex}.jpg`);
-	const inverted_image = await loadImage("webgl/texture/inversion.png");
+	const inverted_image = await loadImage(`webgl/texture/inversion-${inversionIndex}.png`);
 
-	var canvas = document.querySelector("#img-canvas");
-	var gl = canvas.getContext("webgl");
+	const canvas = document.querySelector("#img-canvas");
+	const image_picker = document.querySelector("#file");
+	const gl = canvas.getContext("webgl");
 	if (!gl) {
 		return;
 	}
@@ -129,11 +139,6 @@ async function render() {
 	function draw() {
 		// Tell WebGL how to convert from clip space to pixels
 		canvas.height = canvas.width;
-		gl.viewport(0, 0, gl.canvas.width, gl.canvas.height);
-
-		gl.activeTexture(gl.TEXTURE1);
-		gl.bindTexture(gl.TEXTURE_2D, texture2);
-		gl.uniform1i(texture2Location, 1);
 
 		// count mouse
 		let mouse_dx = mouse.x - last_mouse.x;
@@ -146,43 +151,64 @@ async function render() {
 		time += 1;
 
 		let processed_time = Math.floor(time / delay);
-		gl.uniform2f(resolutionLocation, gl.canvas.width, gl.canvas.height);
-		gl.uniform1f(timeLocation, Math.floor(time / delay));
-		gl.uniform1f(invertLocation, invert[imageIndex - 1] ? -1 : 1);
 		if (skip_text) gl.uniform1f(invertLocation, 2);
 
 		if (last_processed_time != processed_time) {
 			last_processed_time = processed_time;
-			gl.uniform1f(glitchLocation, 0.2 + (mouse_dx + mouse_dy) / 100);
-			delay = 20;
+			delay = 4;
+
+			gl.uniform2f(resolutionLocation, gl.canvas.width, gl.canvas.height);
+			gl.uniform1f(timeLocation, Math.floor(time / delay));
+			gl.uniform1f(invertLocation, invert[imageIndex - 1] ? -1 : 1);
+			gl.uniform1f(glitchLocation, 0.1 + (mouse_dx + mouse_dy) / 10);
 
 			let max_glitch_frame = false;
-			if (Math.random() > 0.999) max_glitch_frame = true;
+			if (Math.random() > 0.995) max_glitch_frame = true;
 			if (max_glitch_frame) gl.uniform1f(glitchLocation, 10.0);
+
+			// actual render
+			gl.viewport(0, 0, gl.canvas.width, gl.canvas.height);
+
+			gl.activeTexture(gl.TEXTURE1);
+			gl.bindTexture(gl.TEXTURE_2D, texture2);
+			gl.uniform1i(texture2Location, 1);
+
+			// bind the texcoord buffer.
+			gl.bindTexture(gl.TEXTURE_2D, texture2);
+			gl.bindBuffer(gl.ARRAY_BUFFER, texcoordBuffer);
+
+			// Draw the rectangle.
+			var primitiveType = gl.TRIANGLES;
+			var offset = 0;
+			var count = 6;
+			gl.drawArrays(primitiveType, offset, count);
 		}
-
-		// bind the texcoord buffer.
-		gl.bindTexture(gl.TEXTURE_2D, texture2);
-		gl.bindBuffer(gl.ARRAY_BUFFER, texcoordBuffer);
-
-		// Draw the rectangle.
-		var primitiveType = gl.TRIANGLES;
-		var offset = 0;
-		var count = 6;
-		gl.drawArrays(primitiveType, offset, count);
 
 		requestAnimationFrame(draw);
 	}
 
-	draw();
-}
+	image_picker.onchange = function (e) {
+		let max_size = gl.getParameter(gl.MAX_TEXTURE_SIZE);
 
-function setRectangle(gl, x, y, width, height) {
-	var x1 = x;
-	var x2 = x + width;
-	var y1 = y;
-	var y2 = y + height;
-	gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([x1, y1, x2, y1, x1, y2, x1, y2, x2, y1, x2, y2]), gl.STATIC_DRAW);
+		const file = e.target.files[0];
+		const reader = new FileReader();
+		reader.onload = function (event) {
+			const img = new Image();
+			img.onload = function () {
+				if (img.height > max_size || img.width > max_size) {
+					alert(`image is too big - max width and height is ${max_size}`);
+					return;
+				}
+
+				gl.bindTexture(gl.TEXTURE_2D, texture);
+				gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, img);
+			};
+			img.src = event.target.result;
+		};
+		reader.readAsDataURL(file);
+	};
+
+	draw();
 }
 
 render();

@@ -136,6 +136,6 @@ void main() {
 
     if (u_invert > 1.5) return;
 
-    vec3 text = texture2D(u_inverted_texture, uv + vec2(0.0, sin(u_time * 0.05) * 0.1)).rgb;
+    vec3 text = texture2D(u_inverted_texture, uv + vec2(0.0, sin(u_time * 0.01) * 0.1)).rgb;
     gl_FragColor.rgb += text * u_invert;
 }

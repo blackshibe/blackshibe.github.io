@@ -18,6 +18,13 @@
 	height: 650px;
 }
 
+@media (max-width: 1060px) {
+	.glitch-image {
+		width: 100%;
+		height: auto;
+	}
+}
+
 .custom-heading {
 	font-size: 1.5rem;
 	font-weight: bold;

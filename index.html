@@ -19,9 +19,8 @@
 		<canvas id="main-canvas" class="absolute w-screen h-screen left-0 top-0"></canvas>
 
 		<div class="h-screen left-0 top-0 flex justify-center items-center">
-			<canvas id="img-canvas" class="glitch-image hidden lg:inline lg:p-8"></canvas>
+			<canvas id="img-canvas" class="glitch-image hidden sm:inline p-8 disable-filtering"></canvas>
 
-			<!-- <img src="page/photo/2024-12-23/20241223_001007168.jpg" class="h-screen z-10 p-8" /> -->
 			<div class="custom-site-content">
 				<div class="justify-center items-center col md:flex-row">
 					<div class="flex flex-col gap-2 p-4">
@@ -35,10 +34,14 @@
 						<div class="grid">
 							<p class="text-4xl font-light">contact</p>
 
-							<p class="opacity-80">email: blackshibe@tutanota.com</p>
-							<p class="opacity-80">discord: @blackshibe</p>
-							<p class="opacity-80">github: @blackshibe</p>
-							<p class="opacity-80">soundcloud: @shibesongs</p>
+							<a class="opacity-80" href="mailto:blackshibe@tutanota.com"
+								>email: blackshibe@tutanota.com</a
+							>
+							<a class="opacity-80" href="https://discordapp.com/users/317334507265196032"
+								>discord: @blackshibe</a
+							>
+							<a class="opacity-80" href="https://github.com/blackshibe/">github: @blackshibe</a>
+							<a class="opacity-80" href="https://soundcloud.com/shibesongs">soundcloud: @shibesongs</a>
 						</div>
 
 						<div class="grid">
@@ -54,6 +57,10 @@
 							<div class="mt-2"></div>
 
 							<a class="opacity-80" href="" id="random-tag" class="hidden">visit a friendly website</a>
+							<a class="opacity-80" href="javascript:document.getElementById('file').click();"
+								>choose your own image</a
+							>
+							<input type="file" id="file" class="hidden" />
 						</div>
 					</div>
 				</div>

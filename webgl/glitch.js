@@ -132,7 +132,7 @@ async function render() {
 	};
 
 	let time = 1;
-	let delay = 20;
+	let delay = 1;
 	let last_processed_time = 0;
 
 	function draw() {
@@ -154,7 +154,7 @@ async function render() {
 
 		if (last_processed_time != processed_time) {
 			last_processed_time = processed_time;
-			delay = 20;
+			delay = 1;
 
 			gl.uniform2f(resolutionLocation, gl.canvas.width, gl.canvas.height);
 			gl.uniform1f(timeLocation, Math.floor(time / delay));

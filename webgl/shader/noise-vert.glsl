@@ -1,5 +1,7 @@
 // an attribute will receive data from a buffer
+
 attribute vec4 a_position;
+precision highp float;
 
 // all shaders have a main function
 void main() {

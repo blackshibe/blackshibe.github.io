@@ -1,4 +1,4 @@
-precision mediump float;
+precision highp float;
 
 // our texture
 uniform sampler2D u_image;

@@ -129,10 +129,11 @@ async function render() {
 	document.onmousemove = function (e) {
 		mouse.x = e.clientX;
 		mouse.y = e.clientY;
+		delay = 5;
 	};
 
 	let time = 1;
-	let delay = 20;
+	let delay = 1;
 	let last_processed_time = 0;
 
 	function draw() {
@@ -154,12 +155,12 @@ async function render() {
 
 		if (last_processed_time != processed_time) {
 			last_processed_time = processed_time;
-			delay = 20;
+			delay = 4;
 
 			gl.uniform2f(resolutionLocation, gl.canvas.width, gl.canvas.height);
 			gl.uniform1f(timeLocation, Math.floor(time / delay));
 			gl.uniform1f(invertLocation, invert[imageIndex - 1] ? -1 : 1);
-			gl.uniform1f(glitchLocation, 0.1 + (mouse_dx + mouse_dy) / 20);
+			gl.uniform1f(glitchLocation, 0.1 + (mouse_dx + mouse_dy) / 10);
 
 			let max_glitch_frame = false;
 			if (Math.random() > 0.995) max_glitch_frame = true;

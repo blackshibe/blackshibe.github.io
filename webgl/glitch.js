@@ -16,7 +16,7 @@ function setRectangle(gl, x, y, width, height) {
 }
 
 async function render() {
-	let imageIndex = Math.floor(Math.random() * 9) + 1;
+	let imageIndex = Math.floor(Math.random() * 14) + 1;
 	let inversionIndex = Math.floor(Math.random() * 9) + 1;
 	let invert = [false, true, false, false, false, false, false, false, false];
 	let skip_text = Math.random() > 0.6;

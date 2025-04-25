@@ -11,7 +11,7 @@ $SourceDir = "photo"
 $ThumbnailSuffix = ".preview.jpg"
 $MaxWidth = 800
 $MaxHeight = 800
-$Quality = 40  # 1-100 where lower is worse quality
+$Quality = 60  # 1-100 where lower is worse quality
 
 # Initialize counters
 $processed = 0

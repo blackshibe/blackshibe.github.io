@@ -97,12 +97,14 @@
 					photos: ["photo/2025-04-23/DSCF8165.JPG"],
 				},
 				{
+					name: "",
+					photos: ["photo/2025-04-19/DSCF7523.JPG", "photo/2025-04-19/DSCF7529.JPG"],
+				},
+				{
 					name: "2025 04 19",
 					photos: [
 						"photo/2025-04-19/DSCF7547.JPG",
 						"photo/2025-04-19/DSCF7545.JPG",
-						"photo/2025-04-19/DSCF7529.JPG",
-						"photo/2025-04-19/DSCF7523.JPG",
 						"photo/2025-04-19/DSCF7515.JPG",
 						"photo/2025-04-19/DSCF7472.JPG",
 						"photo/2025-04-19/DSCF7449.JPG",
@@ -111,10 +113,15 @@
 						"photo/2025-04-19/DSCF7418.JPG",
 						"photo/2025-04-19/DSCF7395.JPG",
 						"photo/2025-04-19/DSCF7390.JPG",
-						"photo/2025-04-19/DSCF7330.JPG",
+					],
+				},
+				{
+					name: "",
+					photos: [
+						"photo/2025-04-19/DSCF7298.JPG",
 						"photo/2025-04-19/DSCF7326.JPG",
 						"photo/2025-04-19/DSCF7314.JPG",
-						"photo/2025-04-19/DSCF7298.JPG",
+						"photo/2025-04-19/DSCF7330.JPG",
 					],
 				},
 				{
@@ -236,7 +243,13 @@
 			];
 
 			const card_contents = document.getElementById("card-contents");
-			const col_span_increased_photos = ["DSCF8183.JPG", "20241223_001331184.jpg", "DSCF8165"];
+			const col_span_increased_photos = [
+				"DSCF8183.JPG",
+				"20241223_001331184.jpg",
+				"DSCF8165",
+				"DSCF7529",
+				"DSCF7523",
+			];
 
 			data.forEach((element) => {
 				let card = document.createElement("div");

@@ -21,7 +21,7 @@ fi
 # Find and process all JPG/JPEG/PNG files
 find "$1" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.JPEG" -o -iname "*.PNG" -o -iname "*.JPG" \) -print0 | while IFS= read -r -d $'\0' file; do
     echo "Processing: $file"
-    exiftool -all= -overwrite_original "$file"
+    exiftool -all= --Orientation -overwrite_original "$file"
 done
 
 echo "Done"

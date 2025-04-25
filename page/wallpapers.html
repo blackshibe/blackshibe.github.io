@@ -12,6 +12,7 @@
 		<link rel="stylesheet" href="/css/style.css" />
 		<link rel="stylesheet" href="/css/custom.css" />
 		<link rel="stylesheet" href="/css/tailwind.css" />
+		<link rel="stylesheet" href="/css/photos.css" />
 
 		<style>
 			footer {
@@ -60,199 +61,15 @@
 	</head>
 	<!-- i can't be bothered to build this from some macro or express webpage -->
 	<body class="font-custom leading-6 text-lg">
+		<canvas id="main-canvas" class="absolute w-screen h-screen left-0 top-0 opacity-10"></canvas>
+
 		<div class="custom-site-content">
 			<div style="height: 10vh"></div>
-			<article class="flex flex-col gap-2 min-h-screen">
+			<article class="flex flex-col gap-2 min-h-screen" id="card-contents">
 				<div class="custom-card">
 					<p class="custom-heading">random photos i took</p>
 					<hr />
-					<p>
-						everything is taken on an Xperia in RAW, then edited in a morally right copy of Adobe Lightroom.
-						I don't own proper camera gear.
-					</p>
-					<p>i post on bluesky - @blackshibe.bsky.social</p>
-				</div>
-
-				<div class="custom-card">
-					<p class="custom-heading">2025 02 25</p>
-					<hr />
-					<div>
-						<div class="grid grid-cols-2 gap-2">
-							<img src="photo/2025-02-25/_DSC5036.jpg" alt="" />
-							<img src="photo/2025-02-25/_DSC5121.jpg" alt="" />
-							<img src="photo/2025-02-25/_DSC5101.jpg" alt="" />
-							<img src="photo/2025-02-25/_DSC5057.jpg" alt="" />
-						</div>
-					</div>
-				</div>
-
-				<div class="custom-card">
-					<p class="custom-heading">2024 12 23</p>
-					<hr />
-					<div>
-						<div class="grid grid-cols-2 gap-2">
-							<img src="photo/2024-12-23/20241223_000742662.jpg" alt="" />
-							<img src="photo/2024-12-23/20241223_001007168.jpg" alt="" />
-
-							<img src="photo/2024-12-23/20241223_001331184.jpg" class="col-span-2" alt="" span />
-
-							<img src="photo/2024-12-23/20241223_001207332.png" alt="" />
-							<img src="photo/2024-12-23/20241223_001207332-2.jpg" alt="" />
-						</div>
-					</div>
-				</div>
-
-				<div class="custom-card">
-					<p class="custom-heading">2024 12 20</p>
-					<hr />
-					<div>
-						<div class="grid grid-cols-2 gap-2">
-							<img src="photo/2024-12-23/20241214_205258193.jpg" alt="" />
-							<img src="photo/2024-12-23/20241221_005659647.jpg" alt="" />
-						</div>
-					</div>
-				</div>
-
-				<div class="custom-card">
-					<p class="custom-heading">2024 11 08</p>
-					<hr />
-					<div>
-						<div class="grid grid-cols-2 gap-2">
-							<img src="photo/2024-11-08/20241108_171851.jpg" alt="" />
-							<img src="photo/2024-11-08/20241108_175445.jpg" alt="" />
-						</div>
-					</div>
-				</div>
-
-				<div class="custom-card">
-					<p class="custom-heading">2024 10 28</p>
-					<hr />
-					<div>
-						<div class="grid grid-cols-2 gap-2">
-							<img src="photo/2024-11-03/20241027_142721.JPG" alt="" />
-							<img src="photo/2024-11-03/20241027_135925.JPG" alt="" />
-						</div>
-					</div>
-				</div>
-
-				<div class="custom-card">
-					<p class="custom-heading">2024 09 10</p>
-					<hr />
-					<div>
-						<div class="grid grid-cols-2 gap-2">
-							<img src="photo/2024-11-03/picked/20240911_114149.jpg" alt="" />
-							<img src="photo/2024-11-03/picked/20240913_190906.jpg" alt="" />
-							<img src="photo/2024-11-03/picked/20240911_103518.jpg" alt="" />
-							<img src="photo/2024-11-03/picked/20240911_110628.jpg" alt="" />
-							<img src="photo/2024-11-03/picked/20240912_110545.jpg" alt="" />
-							<img src="photo/2024-11-03/picked/20240912_105235.jpg" alt="" />
-							<img src="photo/2024-11-03/picked/20240912_152214.jpg" alt="" />
-							<img src="photo/2024-11-03/picked/20240913_124046.jpg" alt="" />
-						</div>
-					</div>
-				</div>
-
-				<div class="custom-card">
-					<p class="custom-heading">2024 09 10</p>
-					<hr />
-					<div>
-						<div class="grid grid-cols-2 gap-2">
-							<img src="photo/2024-09-10/20240910_104253.jpg" alt="" />
-							<img src="photo/2024-09-10/20240910_104315.jpg" alt="" />
-						</div>
-					</div>
-				</div>
-
-				<div class="custom-card">
-					<p class="custom-heading">2024 09 08</p>
-					<hr />
-					<div>
-						<div class="grid grid-cols-2 gap-2">
-							<img src="photo/2024-09-10/20240814_191332.jpg" alt="" />
-							<img src="photo/2024-09-10/20240906_101201.jpg" alt="" />
-						</div>
-					</div>
-				</div>
-
-				<div class="custom-card">
-					<p class="custom-heading">2024 09 03</p>
-					<hr />
-					<div>
-						<div class="grid grid-cols-2 gap-2">
-							<img src="photo/2024-09-03/20240903_181322.jpg" alt="" />
-							<img src="photo/2024-09-03/20240903_141958.jpg" alt="" />
-
-							<img src="photo/2024-09-03/20240903_140723.jpg" alt="" />
-							<img src="photo/2024-09-03/20240903_143456.jpg" alt="" />
-						</div>
-					</div>
-				</div>
-
-				<div class="custom-card">
-					<p class="custom-heading">2024 08 14</p>
-					<hr />
-					<div>
-						<div class="grid grid-cols-2 gap-2">
-							<img src="photo/2024-08-14/20240814_184708-2.jpg" alt="" />
-							<img src="photo/2024-08-14/20240814_190657.jpg" alt="" />
-							<img src="photo/2024-08-14/20240814_164903.jpg" alt="" />
-							<img src="photo/2024-08-14/20240814_191433-2.jpg" alt="" />
-							<img src="photo/2024-08-14/20240814_191332.jpg" alt="" />
-							<img src="photo/2024-08-14/20240814_183858.jpg" alt="" />
-						</div>
-					</div>
-				</div>
-
-				<div class="custom-card">
-					<p class="custom-heading">2024 08 13</p>
-					<hr />
-					<div>
-						<div class="grid grid-cols-2 gap-2">
-							<img src="photo/2024-08-13/20240812_181300-2.jpg" alt="" />
-							<img src="photo/2024-08-13/20240812_190752.jpg" alt="" />
-							<img src="photo/2024-08-13/20240812_180642.jpg" alt="" />
-							<img src="photo/2024-08-13/20240812_180400.jpg" alt="" />
-							<img src="photo/2024-08-13/20240812_201025.jpg" alt="" />
-							<img src="photo/2024-08-13/20240812_200523.jpg" alt="" />
-
-							<!-- <img src="photo/2024-08-13/20240812_175015.jpg" alt="" /> not that good
-							<img src="photo/2024-08-13/20240812_175427.jpg" alt="" />
-							<img src="photo/2024-08-13/20240812_175551.jpg" alt="" />
-							<img src="photo/2024-08-13/20240812_175602.jpg" alt="" /> -->
-						</div>
-					</div>
-				</div>
-
-				<div class="custom-card">
-					<p class="custom-heading">2024 07 27</p>
-					<hr />
-					<div>
-						<div class="grid grid-cols-2 gap-2">
-							<img src="photo/29 07 2024/20240727_120354.jpg" alt="" />
-							<img src="photo/29 07 2024/20240727_161114.jpg" alt="" />
-							<img src="photo/29 07 2024/20240727_183213.jpg" alt="" />
-							<img src="photo/29 07 2024/20240727_171006.jpg" alt="" />
-							<img src="photo/29 07 2024/20240727_191211.jpg" alt="" />
-							<img src="photo/29 07 2024/20240727_182217.jpg" alt="" />
-							<img src="photo/29 07 2024/20240727_194949.jpg" alt="" />
-							<img src="photo/29 07 2024/20240727_194945.jpg" alt="" />
-							<img src="photo/29 07 2024/20240727_145047.jpg" alt="" />
-							<img src="photo/29 07 2024/20240727_172045.jpg" alt="" />
-						</div>
-					</div>
-				</div>
-
-				<div class="custom-card">
-					<p class="custom-heading">old</p>
-					<hr />
-					<div>
-						<div class="grid grid-cols-2 gap-2">
-							<img src="photo/17 07 2024/20240717_172930.jpg" alt="" />
-							<img src="photo/17 07 2024/20240717_182554-Enhanced-NR.jpg" alt="" />
-							<img src="wallpaper/DSC_0102.JPG" alt="" />
-							<img src="wallpaper/DSC_0008.JPG" alt="" />
-						</div>
-					</div>
+					<p>I use a Fujifilm X-T20 with a cheap 56mm lens and a Sony Xperia 1 V for most of my photos.</p>
 				</div>
 			</article>
 			<div style="height: 25vh"></div>
@@ -262,6 +79,197 @@
 		<div id="img-tooltip" class="hidden text-white m-auto w-screen text-center mb-6 transition-all">
 			this shit goes so hard. feel free to right click and save image
 		</div>
+
+		<script>
+			let data = [
+				{
+					name: "2025 04 23",
+					photos: [
+						"photo/2025-04-23/DSCF8269.JPG",
+						"photo/2025-04-23/DSCF8268.JPG",
+						"photo/2025-04-23/DSCF8244.JPG",
+						"photo/2025-04-23/DSCF7648.JPG",
+						"photo/2025-04-23/DSCF8183.JPG",
+					],
+				},
+				{
+					name: "2025 04 23",
+					photos: ["photo/2025-04-23/DSCF8165.JPG"],
+				},
+				{
+					name: "2025 04 19",
+					photos: [
+						"photo/2025-04-19/DSCF7547.JPG",
+						"photo/2025-04-19/DSCF7545.JPG",
+						"photo/2025-04-19/DSCF7529.JPG",
+						"photo/2025-04-19/DSCF7523.JPG",
+						"photo/2025-04-19/DSCF7515.JPG",
+						"photo/2025-04-19/DSCF7472.JPG",
+						"photo/2025-04-19/DSCF7449.JPG",
+						"photo/2025-04-19/DSCF7447.JPG",
+						"photo/2025-04-19/DSCF7435.JPG",
+						"photo/2025-04-19/DSCF7418.JPG",
+						"photo/2025-04-19/DSCF7395.JPG",
+						"photo/2025-04-19/DSCF7390.JPG",
+						"photo/2025-04-19/DSCF7330.JPG",
+						"photo/2025-04-19/DSCF7326.JPG",
+						"photo/2025-04-19/DSCF7314.JPG",
+						"photo/2025-04-19/DSCF7298.JPG",
+					],
+				},
+				{
+					name: "2025 04 18",
+					photos: [
+						"photo/2025-04-18/DSCF6920.jpg",
+						"photo/2025-04-18/DSCF6963.jpg",
+						"photo/2025-04-18/DSCF6957.jpg",
+						"photo/2025-04-18/DSCF6944.jpg",
+					],
+				},
+				{
+					name: "2025 02 25",
+					photos: [
+						"photo/2025-02-25/_DSC5036.jpg",
+						"photo/2025-02-25/_DSC5121.jpg",
+						"photo/2025-02-25/_DSC5101.jpg",
+						"photo/2025-02-25/_DSC5057.jpg",
+					],
+				},
+				{
+					name: "2024 12 23",
+					photos: [
+						"photo/2024-12-23/20241223_000742662.jpg",
+						"photo/2024-12-23/20241223_001007168.jpg",
+						"photo/2024-12-23/20241223_001331184.jpg",
+						"photo/2024-12-23/20241223_001207332.png",
+						"photo/2024-12-23/20241223_001207332-2.jpg",
+					],
+				},
+				{
+					name: "2024 12 20",
+					photos: ["photo/2024-12-23/20241214_205258193.jpg", "photo/2024-12-23/20241221_005659647.jpg"],
+				},
+				{
+					name: "2024 11 08",
+					photos: ["photo/2024-11-08/20241108_171851.jpg", "photo/2024-11-08/20241108_175445.jpg"],
+				},
+				{
+					name: "2024 10 28",
+					photos: ["photo/2024-11-03/20241027_142721.JPG", "photo/2024-11-03/20241027_135925.JPG"],
+				},
+				{
+					name: "2024 09 10",
+					photos: [
+						"photo/2024-11-03/picked/20240911_114149.jpg",
+						"photo/2024-11-03/picked/20240913_190906.jpg",
+						"photo/2024-11-03/picked/20240911_103518.jpg",
+						"photo/2024-11-03/picked/20240911_110628.jpg",
+						"photo/2024-11-03/picked/20240912_110545.jpg",
+						"photo/2024-11-03/picked/20240912_105235.jpg",
+						"photo/2024-11-03/picked/20240912_152214.jpg",
+						"photo/2024-11-03/picked/20240913_124046.jpg",
+					],
+				},
+				{
+					name: "2024 09 10",
+					photos: ["photo/2024-09-10/20240910_104253.jpg", "photo/2024-09-10/20240910_104315.jpg"],
+				},
+				{
+					name: "2024 09 08",
+					photos: ["photo/2024-09-10/20240814_191332.jpg", "photo/2024-09-10/20240906_101201.jpg"],
+				},
+				{
+					name: "2024 09 03",
+					photos: [
+						"photo/2024-09-03/20240903_181322.jpg",
+						"photo/2024-09-03/20240903_141958.jpg",
+						"photo/2024-09-03/20240903_140723.jpg",
+						"photo/2024-09-03/20240903_143456.jpg",
+					],
+				},
+				{
+					name: "2024 08 14",
+					photos: [
+						"photo/2024-08-14/20240814_184708-2.jpg",
+						"photo/2024-08-14/20240814_190657.jpg",
+						"photo/2024-08-14/20240814_164903.jpg",
+						"photo/2024-08-14/20240814_191433-2.jpg",
+						"photo/2024-08-14/20240814_191332.jpg",
+						"photo/2024-08-14/20240814_183858.jpg",
+					],
+				},
+				{
+					name: "2024 08 13",
+					photos: [
+						"photo/2024-08-13/20240812_181300-2.jpg",
+						"photo/2024-08-13/20240812_190752.jpg",
+						"photo/2024-08-13/20240812_180642.jpg",
+						"photo/2024-08-13/20240812_180400.jpg",
+						"photo/2024-08-13/20240812_201025.jpg",
+						"photo/2024-08-13/20240812_200523.jpg",
+					],
+				},
+				{
+					name: "2024 07 27",
+					photos: [
+						"photo/29 07 2024/20240727_120354.jpg",
+						"photo/29 07 2024/20240727_161114.jpg",
+						"photo/29 07 2024/20240727_183213.jpg",
+						"photo/29 07 2024/20240727_171006.jpg",
+						"photo/29 07 2024/20240727_191211.jpg",
+						"photo/29 07 2024/20240727_182217.jpg",
+						"photo/29 07 2024/20240727_194949.jpg",
+						"photo/29 07 2024/20240727_194945.jpg",
+						"photo/29 07 2024/20240727_145047.jpg",
+						"photo/29 07 2024/20240727_172045.jpg",
+					],
+				},
+				{
+					name: "old photos",
+					photos: [
+						"photo/17 07 2024/20240717_172930.jpg",
+						"photo/17 07 2024/20240717_182554-Enhanced-NR.jpg",
+						"wallpaper/DSC_0102.JPG",
+						"wallpaper/DSC_0008.JPG",
+					],
+				},
+			];
+
+			const card_contents = document.getElementById("card-contents");
+			const col_span_increased_photos = ["DSCF8183.JPG", "20241223_001331184.jpg", "DSCF8165"];
+
+			data.forEach((element) => {
+				let card = document.createElement("div");
+				card.classList.add("custom-card");
+
+				let title = document.createElement("p");
+				title.classList.add("custom-heading");
+				title.innerText = element.name;
+
+				let hr = document.createElement("hr");
+
+				let grid = document.createElement("div");
+				grid.classList.add("grid", "grid-cols-2", "gap-2");
+
+				element.photos.forEach((photo) => {
+					let img = document.createElement("img");
+					img.setAttribute("src", photo.replace("jpg", "preview.jpg"));
+					grid.appendChild(img);
+
+					col_span_increased_photos.forEach((element) => {
+						if (photo.includes(element)) {
+							img.classList.add("col-span-2");
+						}
+					});
+				});
+
+				// card.appendChild(title);
+				// card.appendChild(hr);
+				card.appendChild(grid);
+
+				card_contents.appendChild(card);
+			});
+		</script>
 
 		<script>
 			// i don't need a fucking plugin for an image viewer.
@@ -291,7 +299,7 @@
 
 				let image = document.createElement("img");
 				image.setAttribute("src", state.image);
-				image.classList.add("mb-20", "max-h-full");
+				image.classList.add("mb-20", "max-h-full", "z-10");
 
 				image_renderer.appendChild(image);
 			}
@@ -304,10 +312,16 @@
 			for (let img of document.getElementsByTagName("img")) {
 				img.classList.add("clickable");
 				img.addEventListener("click", () => {
-					state.image = img.getAttribute("src");
+					state.image = img.getAttribute("src").replace(".preview", "");
 					render();
 				});
 			}
 		</script>
+
+		<script id="noise-frag" type="x-shader/x-fragment" src="/webgl/shader/noise-frag.glsl"></script>
+		<script id="noise-vert" type="x-shader/x-vertex" src="/webgl/shader/noise-vert.glsl"></script>
+
+		<script src="/webgl/utils.js"></script>
+		<script src="/webgl/noise.js"></script>
 	</body>
 </html>

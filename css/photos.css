@@ -1,0 +1,31 @@
+body {
+	--text-color: #ffffff;
+	--link-color: #9db4ff;
+	--bg-color: #000000;
+}
+
+hr {
+	display: none;
+}
+
+.custom-card {
+	background-color: var(--bg-color);
+	border: 1px solid rgb(61, 61, 61);
+}
+
+.custom-card:not(:nth-child(1)) {
+	padding: 0.5rem;
+}
+
+#main-canvas {
+	position: fixed;
+}
+
+.custom-site-content {
+	z-index: 1;
+}
+
+#img-tooltip,
+#img-renderer {
+	z-index: 2;
+}

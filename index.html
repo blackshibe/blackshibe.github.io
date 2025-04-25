@@ -16,9 +16,9 @@
 		<title>welcome - blackshibe</title>
 	</head>
 	<body class="font-custom leading-6 bg-image-1">
-		<canvas id="main-canvas" class="absolute w-screen h-screen left-0 top-0"></canvas>
+		<canvas id="main-canvas" class="fixed w-screen h-screen left-0 top-0"></canvas>
 
-		<div class="h-screen left-0 top-0 flex justify-center items-center">
+		<div id="content" class="h-screen left-0 top-0 flex justify-center items-center z-10">
 			<canvas id="img-canvas" class="glitch-image hidden sm:inline p-8 disable-filtering"></canvas>
 
 			<div class="custom-site-content">
@@ -46,7 +46,6 @@
 						<div class="grid">
 							<p class="text-4xl font-light">links</p>
 
-							<a class="opacity-80" href="page/the-wall.html">blackshibe.net - the wall&trade;</a>
 							<a class="opacity-80" href="page/music.html">blackshibe.net - my music</a>
 							<a class="opacity-80" href="page/wallpapers.html">blackshibe.net - my photos</a>
 

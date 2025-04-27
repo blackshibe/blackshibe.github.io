@@ -83,6 +83,7 @@ async function render() {
 	var timeLocation = gl.getUniformLocation(program, "u_time");
 	var glitchLocation = gl.getUniformLocation(program, "u_glitch");
 	var invertLocation = gl.getUniformLocation(program, "u_invert");
+	var mousePositionLocation = gl.getUniformLocation(program, "u_mouse_position");
 	var texture2Location = gl.getUniformLocation(program, "u_inverted_texture");
 
 	webglUtils.resizeCanvasToDisplaySize(gl.canvas);
@@ -136,9 +137,15 @@ async function render() {
 	let delay = 1;
 	let last_processed_time = 0;
 
+	let last_mouse_position = { x: 0, y: 0 };
+
+	function lerp(a, b, t) {
+		return a + (b - a) * t;
+	}
+
 	function draw() {
 		// Tell WebGL how to convert from clip space to pixels
-		canvas.height = canvas.width;
+		// canvas.height = canvas.width;
 
 		// count mouse
 		let mouse_dx = mouse.x - last_mouse.x;
@@ -160,7 +167,16 @@ async function render() {
 			gl.uniform2f(resolutionLocation, gl.canvas.width, gl.canvas.height);
 			gl.uniform1f(timeLocation, Math.floor(time / delay));
 			gl.uniform1f(invertLocation, invert[imageIndex - 1] ? -1 : 1);
-			gl.uniform1f(glitchLocation, 0.1 + (mouse_dx + mouse_dy) / 10);
+			gl.uniform1f(glitchLocation, 0.1 + (mouse_dx + mouse_dy) / 60);
+
+			let new_mouse_position = {
+				x: lerp(last_mouse_position.x, mouse.x / window.outerWidth - 0.5, 0.1),
+				y: lerp(last_mouse_position.y, mouse.y / window.outerHeight - 0.5, 0.1),
+			};
+
+			gl.uniform2f(mousePositionLocation, new_mouse_position.x, new_mouse_position.y);
+			last_mouse_position.x = new_mouse_position.x;
+			last_mouse_position.y = new_mouse_position.y;
 
 			let max_glitch_frame = false;
 			if (Math.random() > 0.995) max_glitch_frame = true;

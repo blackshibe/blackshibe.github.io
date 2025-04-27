@@ -6,6 +6,7 @@ uniform sampler2D u_inverted_texture;
 uniform float u_time;
 uniform float u_glitch;
 uniform float u_invert;
+uniform vec2 u_mouse_position;
 
 // the texCoords passed in from the vertex shader.
 varying vec2 v_texCoord;
@@ -110,6 +111,12 @@ void main() {
     ofs += 0.5 * pxrnd * ofs;
 
     uv.y += 0.1 * r3 * GLITCH;
+    uv -= u_mouse_position / 10.0;
+
+    // zoom in
+    float zoom = 0.99;
+    uv.x = uv.x * zoom + (1.0 - zoom) * 0.5;
+    uv.y = uv.y * zoom + (1.0 - zoom) * 0.5;
 
     const int NUM_SAMPLES = 10;
     const float RCP_NUM_SAMPLES_F = 1.0 / float(NUM_SAMPLES);
@@ -120,7 +127,17 @@ void main() {
     {
         float t = float(i) * RCP_NUM_SAMPLES_F;
         uv.x = sat( uv.x + ofs * t );
-        vec4 samplecol = texture2D(u_image, uv);
+
+        float distance_to_center = length( v_texCoord - vec2(0.5, 0.5) ) / 3.0;
+        distance_to_center = distance_to_center * distance_to_center * distance_to_center;
+
+        vec4 samplecol = vec4(
+            texture2D(u_image, uv + vec2(distance_to_center, 0.0)).r,
+            texture2D(u_image, uv + vec2(0.0, 0.0)).g,
+            texture2D(u_image, uv + vec2(-distance_to_center, 0.0)).b,
+            1.0
+        );
+
         vec3 s = spectrum_offset( t );
         samplecol.rgb = samplecol.rgb * s;
         sum += samplecol;

@@ -266,7 +266,7 @@
 
 				element.photos.forEach((photo) => {
 					let img = document.createElement("img");
-					img.setAttribute("src", photo.replace("jpg", "preview.jpg").replace("JPG", "preview.jpg"));
+					img.setAttribute("src", photo.replace("jpg", "preview.jpg").replace("JPG", "preview.JPG"));
 					grid.appendChild(img);
 
 					col_span_increased_photos.forEach((element) => {

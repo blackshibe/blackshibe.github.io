@@ -2,16 +2,17 @@
 .SYNOPSIS
     Creates low-quality JPEG thumbnails for all JPG images in a directory and its subdirectories
 .DESCRIPTION
-    Scans 'page\photo' and all subdirectories, creating '.preview.jpg' thumbnails for each JPG/JPEG image
+    Scans 'page\photo' and all subdirectories, creating preview thumbnails for each JPG/JPEG image
     using Windows built-in tools (no additional software required)
+    Preserves original file extension case (.JPG gets .preview.JPG, .jpg gets .preview.jpg)
 #>
 
 # Configuration
 $SourceDir = "photo"
-$ThumbnailSuffix = ".preview.jpg"
-$MaxWidth = 800
-$MaxHeight = 800
-$Quality = 60  # 1-100 where lower is worse quality
+$ThumbnailSuffix = ".preview"
+$MaxWidth = 4000
+$MaxHeight = 4000
+$Quality = 20  # 1-100 where lower is worse quality
 
 # Initialize counters
 $processed = 0
@@ -46,14 +47,21 @@ foreach ($img in $images) {
         continue
     }
 
-    # Set thumbnail path
-    $thumbPath = Join-Path $img.DirectoryName ($img.BaseName + $ThumbnailSuffix)
+    # Get the original extension in its exact case
+    $originalExtension = $img.Extension
+    
+    # Set thumbnail path with matching case
+    $thumbPath = Join-Path $img.DirectoryName ($img.BaseName + $ThumbnailSuffix + $originalExtension.ToLower())
+
+    # For .JPG/.JPEG (uppercase) files, use uppercase extension
+    if ($originalExtension -eq ".JPG" -or $originalExtension -eq ".JPEG") {
+        $thumbPath = Join-Path $img.DirectoryName ($img.BaseName + $ThumbnailSuffix + $originalExtension)
+    }
 
     # Skip if thumbnail already exists
     if (Test-Path -Path $thumbPath -PathType Leaf) {
         Write-Host "SKIPPED: $($img.FullName) (thumbnail exists)" -ForegroundColor Yellow
-        $skipped++
-        continue
+        Remove-Item -Path $thumbPath -Force
     }
 
     # Create thumbnail using Windows built-in tools
@@ -72,7 +80,7 @@ foreach ($img in $images) {
         $graphics = [System.Drawing.Graphics]::FromImage($thumb)
         $graphics.DrawImage($sourceImage, 0, 0, $newWidth, $newHeight)
         
-        # Save as JPEG with quality setting
+        # Save as JPEG with quality setting and correct extension case
         $thumb.Save($thumbPath, $jpegCodec, $encoderParams)
         
         # Clean up resources

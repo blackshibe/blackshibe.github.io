@@ -197,6 +197,7 @@ document.body.appendChild(renderer.domElement);
 // );
 
 // generate planes with images
+const positions = [];
 image_data.forEach((element, group_index) => {
 	const group = new THREE.Group();
 	let pos = 0;
@@ -213,6 +214,7 @@ image_data.forEach((element, group_index) => {
 				const plane = new THREE.Mesh(geometry, material);
 				plane.position.set(pos + (5 * aspect) / 2, -group_index * 5.5, 0);
 				group.add(plane);
+				positions.push({ pos: plane.position, rot: plane.rotation });
 
 				pos += 5 * aspect + 0.5;
 			}
@@ -238,7 +240,6 @@ let mouse = { x: 0, y: 0 };
 document.onmousemove = function (e) {
 	mouse.x = e.clientX;
 	mouse.y = e.clientY;
-	delay = 5;
 };
 
 function lerp(a, b, t) {
@@ -252,6 +253,16 @@ const current_pos = {
 
 const render = () => {
 	requestAnimationFrame(render);
+
+	positions.forEach((element) => {
+		let dist_to_mouse = Math.sqrt(
+			Math.pow(mouse.x / 100 - element.pos.x, 2) +
+				Math.pow(-window.scrollY / 65 - mouse.y / 600 - element.pos.y, 2)
+		);
+		element.pos.z = lerp(element.pos.z, -dist_to_mouse / 5, 0.1);
+		element.rot.x = lerp(element.rot.x, dist_to_mouse * 0.01, 0.1);
+	});
+
 	const target_pos = {
 		x: mouse.x / 100,
 		y: -window.scrollY / 65 - mouse.y / 600,

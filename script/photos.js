@@ -199,16 +199,22 @@ document.body.appendChild(renderer.domElement);
 // generate planes with images
 image_data.forEach((element, group_index) => {
 	const group = new THREE.Group();
+	let pos = 0;
 	element.photos.forEach((photo, index) => {
 		const textureLoader = new THREE.TextureLoader();
 		const texture = textureLoader.load(
 			photo.replace("JPG", "preview.JPG").replace("jpg", "preview.jpg"),
 			(texture) => {
-				const geometry = new THREE.PlaneGeometry(5, 5);
+				// base size on texture aspect ratio
+				const aspect = texture.image.width / texture.image.height;
+
+				const geometry = new THREE.PlaneGeometry(5 * aspect, 5);
 				const material = new THREE.MeshBasicMaterial({ map: texture });
 				const plane = new THREE.Mesh(geometry, material);
-				plane.position.set(index * 6, -group_index * 6, 0);
+				plane.position.set(pos + (5 * aspect) / 2, -group_index * 5.5, 0);
 				group.add(plane);
+
+				pos += 5 * aspect + 0.5;
 			}
 		);
 	});
@@ -222,22 +228,47 @@ const geometry = new THREE.TorusGeometry(10, 3, 16, 100);
 const material = new THREE.MeshStandardMaterial({ color: 0x0077ff });
 const torus = new THREE.Mesh(geometry, material);
 
-const light = new THREE.DirectionalLight(0xffffff, 1);
-light.position.set(5, 5, 5).normalize();
-scene.add(light);
+// const light = new THREE.DirectionalLight(0xffffff, 1);
+// light.position.set(5, 5, 5).normalize();
+// scene.add(light);
 // scene.add(torus);
+
+let mouse = { x: 0, y: 0 };
+
+document.onmousemove = function (e) {
+	mouse.x = e.clientX;
+	mouse.y = e.clientY;
+	delay = 5;
+};
+
+function lerp(a, b, t) {
+	return a + (b - a) * t;
+}
+
+const current_pos = {
+	x: 0,
+	y: 0,
+};
 
 const render = () => {
 	requestAnimationFrame(render);
+	const target_pos = {
+		x: mouse.x / 100,
+		y: -window.scrollY / 65 - mouse.y / 600,
+	};
+
+	const new_pos = {
+		x: lerp(camera.position.x, target_pos.x, 0.1),
+		y: lerp(camera.position.y, target_pos.y, 0.1),
+	};
+
+	camera.position.x = new_pos.x;
+	camera.position.y = new_pos.y;
+	current_pos.x = new_pos.x;
+	current_pos.y = new_pos.y;
+
 	renderer.render(scene, camera);
 };
-
-// the window has no scroll dragger
-window.addEventListener("scroll", (e) => {
-	camera.position.y = -window.scrollY / 65;
-});
-
-camera.position.y = -window.scrollY / 65;
 
 render();
 // noise_start();

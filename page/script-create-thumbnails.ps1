@@ -61,7 +61,8 @@ foreach ($img in $images) {
     # Skip if thumbnail already exists
     if (Test-Path -Path $thumbPath -PathType Leaf) {
         Write-Host "SKIPPED: $($img.FullName) (thumbnail exists)" -ForegroundColor Yellow
-        Remove-Item -Path $thumbPath -Force
+        # Remove-Item -Path $thumbPath -Force
+        continue
     }
 
     # Create thumbnail using Windows built-in tools

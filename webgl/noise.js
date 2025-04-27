@@ -1,4 +1,9 @@
-async function main() {
+export const noise_options = {
+	enabled: true,
+	strength: 1,
+};
+
+export async function noise_start() {
 	const canvas = document.querySelector("#main-canvas");
 	const gl = canvas.getContext("webgl");
 	if (!gl) {
@@ -39,7 +44,16 @@ async function main() {
 
 	webglUtils.resizeCanvasToDisplaySize(gl.canvas);
 
+	const uniforms = {
+		u_resolution: gl.getUniformLocation(program, "u_resolution"),
+		u_time: gl.getUniformLocation(program, "u_time"),
+		u_strength: gl.getUniformLocation(program, "u_strength"),
+	};
+
 	function draw() {
+		canvas.style.opacity = noise_options.enabled ? 1 : 0;
+		if (!noise_options.enabled) return;
+
 		webglUtils.resizeCanvasToDisplaySize(gl.canvas);
 
 		// Tell WebGL how to convert from clip space to pixels
@@ -64,8 +78,9 @@ async function main() {
 			0 // start at the beginning of the buffer
 		);
 
-		gl.uniform2f(gl.getUniformLocation(program, "u_resolution"), gl.canvas.width, gl.canvas.height);
-		gl.uniform1f(gl.getUniformLocation(program, "u_time"), new Date().getMilliseconds());
+		gl.uniform2f(uniforms.u_resolution, gl.canvas.width, gl.canvas.height);
+		gl.uniform1f(uniforms.u_time, new Date().getMilliseconds());
+		gl.uniform1f(uniforms.u_strength, noise_options.strength * 0.5);
 
 		gl.drawArrays(
 			gl.TRIANGLES,
@@ -80,5 +95,3 @@ async function main() {
 
 	draw();
 }
-
-main();

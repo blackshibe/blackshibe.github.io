@@ -1,6 +1,7 @@
 precision highp float;
 uniform vec2 u_resolution;
 uniform float u_time;
+uniform float u_strength;
 
 float rand(float co) { return fract(sin(co*(91.3458)) * 47453.5453); }
 float rand(vec2 co){ return fract(sin(dot(co.xy ,vec2(12.9898,78.233))) * 43758.5453); }
@@ -12,11 +13,9 @@ void main() {
 
 	float x = (uv.x + 1.0) * (uv.y + 0.0123421) * (u_time * 0.1);
 
-	float strength = 0.2;
-
-	if (rand(x) > 0.999) gl_FragColor = vec4(strength, strength, strength, 0.0);
-	else if (rand(x) > 0.9) gl_FragColor = vec4(strength, 0.0, 0.0, 0.0);
-	else if (rand(x) > 0.8) gl_FragColor = vec4(0.0, strength, 0.0, 0.0);
-	else if (rand(x) > 0.6) gl_FragColor = vec4(0.0, 0.0, strength, 0.0);
+	if (rand(x) > 0.999) gl_FragColor = vec4(u_strength, u_strength, u_strength, 0.0);
+	else if (rand(x) > 0.9) gl_FragColor = vec4(u_strength, 0.0, 0.0, 0.0);
+	else if (rand(x) > 0.8) gl_FragColor = vec4(0.0, u_strength, 0.0, 0.0);
+	else if (rand(x) > 0.6) gl_FragColor = vec4(0.0, 0.0, u_strength, 0.0);
 	else gl_FragColor = vec4(0.0, 0.0, 0.0, 0.0);
 }

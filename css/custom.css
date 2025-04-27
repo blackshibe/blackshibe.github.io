@@ -9,21 +9,15 @@
 	background-color: rgba(0, 0, 0, 0.284);
 }
 
+.custom-font {
+	font-family: "Courier New", Courier, monospace;
+	font-size: 1.2rem;
+	color: #fff;
+}
+
 .custom-card a,
 .custom-card p {
 	width: fit-content;
-}
-
-.glitch-image {
-	width: 800px;
-	height: 800px;
-}
-
-@media (max-width: 1060px) {
-	.glitch-image {
-		width: 100%;
-		height: auto;
-	}
 }
 
 .custom-heading {
@@ -38,9 +32,28 @@
 	width: min(100%, 900px);
 }
 
-.custom-fixed-bg {
-	position: fixed;
-	top: 0;
-	height: 100%;
-	width: 100%;
+.main-page-info-card {
+	background-color: var(--bg-color);
+	min-width: 460px;
+	max-width: 460px;
+}
+
+.main-page-info-card a {
+	text-shadow: var(--link-color) 0px 0px 2px;
+}
+
+.main-page-info-card p {
+	text-shadow: var(--text-color) 0px 0px 2px;
+}
+
+@media (max-width: 460px) {
+	.main-page-info-card {
+		min-width: 100%;
+		max-width: 100%;
+	}
+}
+
+.new-logs {
+	overflow: hidden;
+	user-select: none;
 }

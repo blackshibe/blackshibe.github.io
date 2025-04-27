@@ -61,10 +61,10 @@ hr {
 	opacity: 50%;
 }
 
-.z-10 {
-	z-index: 15;
+button {
+	border: 1px dotted gray;
 }
 
-.opacity-10 {
-	opacity: 10%;
+.bg-transparent {
+	background-color: var(--bg-color);
 }

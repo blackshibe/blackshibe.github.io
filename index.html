@@ -11,52 +11,68 @@
 		<link rel="icon" href="favicon.ico" />
 		<link rel="stylesheet" href="css/style.css" />
 		<link rel="stylesheet" href="css/custom.css" />
-		<link rel="stylesheet" href="/css/tailwind.css" />
+		<link rel="stylesheet" href="css/neofetch.css" />
+		<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
 		<title>welcome - blackshibe</title>
 	</head>
 	<body class="font-custom leading-6 bg-image-1">
-		<canvas id="main-canvas" class="fixed w-screen h-screen left-0 top-0"></canvas>
+		<canvas id="main-canvas" class="fixed w-screen h-screen"></canvas>
+		<input type="file" id="file" class="hidden" />
 
-		<div id="content" class="h-screen left-0 top-0 flex justify-center items-center z-10">
-			<canvas id="img-canvas" class="glitch-image hidden sm:inline p-8 disable-filtering"></canvas>
+		<div id="logs" class="fixed w-screen h-screen text-white font-custom"></div>
 
-			<div class="custom-site-content">
-				<div class="justify-center items-center col md:flex-row">
-					<div class="flex flex-col gap-2 p-4">
-						<div class="grid">
-							<p class="text-4xl font-light">blackshibe</p>
+		<div
+			id="load-notification"
+			class="fixed w-screen h-screen justify-center items-center flex flex-col gap-2 text-white z-10"
+		>
+			<p>best on PC</p>
+			<button id="load-button" class="p-2">load</button>
+		</div>
 
-							<p class="opacity-60">thanks, jax</p>
-						</div>
+		<div class="fixed w-screen h-screen text-white font-custom hidden flex" id="main-info">
+			<div class="w-full h-full transition-all text-white font-custom">
+				<canvas id="img-canvas" class="fixed new-logs w-full h-full p-4 text-white font-custom"></canvas>
+				<div
+					id="new-logs"
+					class="fixed new-logs w-full h-full p-4 z-10 opacity-0 transition-all text-white font-custom"
+				></div>
+			</div>
+			<div class="main-page-info-card flex items-center justify-center h-screen z-20">
+				<div class="flex flex-col gap-2">
+					<div class="grid">
+						<p class="text-4xl font-light">blackshibe</p>
 
-						<div class="grid">
-							<p class="text-4xl font-light">contact</p>
+						<p class="opacity-60">thanks, jax</p>
+					</div>
 
-							<a class="opacity-80" href="mailto:blackshibe@tutanota.com"
-								>email: blackshibe@tutanota.com</a
-							>
-							<a class="opacity-80" href="https://discordapp.com/users/317334507265196032"
-								>discord: @blackshibe</a
-							>
-							<a class="opacity-80" href="https://github.com/blackshibe/">github: @blackshibe</a>
-							<a class="opacity-80" href="https://soundcloud.com/shibesongs">soundcloud: @shibesongs</a>
-						</div>
+					<div class="grid">
+						<p class="text-4xl font-light">contact</p>
 
-						<div class="grid">
-							<p class="text-4xl font-light">links</p>
+						<a class="opacity-80" href="mailto:blackshibe@tutanota.com">email: blackshibe@tutanota.com</a>
+						<a class="opacity-80" href="https://discordapp.com/users/317334507265196032"
+							>discord: @blackshibe</a
+						>
+						<a class="opacity-80" href="https://github.com/blackshibe/">github: @blackshibe</a>
+						<a class="opacity-80" href="https://soundcloud.com/shibesongs">soundcloud: @shibesongs</a>
+					</div>
 
-							<a class="opacity-80" href="page/music.html">blackshibe.net - my music</a>
-							<a class="opacity-80" href="page/wallpapers.html">blackshibe.net - my photos</a>
+					<div class="grid">
+						<p class="text-4xl font-light">links</p>
 
-							<div class="mt-2"></div>
+						<a class="opacity-80" href="page/music.html">blackshibe.net - my music</a>
+						<a class="opacity-80" href="page/wallpapers.html">blackshibe.net - my photos</a>
+						<!-- <a class="opacity-80" href="page/wallpapers-3d.html">wallpapers 3D</a> -->
+					</div>
 
-							<a class="opacity-80" href="" id="random-tag" class="hidden">visit a friendly website</a>
-							<a class="opacity-80" href="javascript:document.getElementById('file').click();"
-								>choose your own image</a
-							>
-							<input type="file" id="file" class="hidden" />
-						</div>
+					<div class="grid">
+						<p class="text-4xl font-light">fun stuff</p>
+
+						<a class="opacity-80" href="" id="random-tag" class="hidden">visit a friendly website</a>
+						<a class="opacity-80" href="javascript:document.getElementById('file').click();"
+							>choose your own image</a
+						>
+						<a id="neofetch-toggle" class="opacity-80" href="javascript:show_neofetch();">show neofetch</a>
 					</div>
 				</div>
 			</div>
@@ -69,8 +85,7 @@
 	<script id="noise-vert" type="x-shader/x-vertex" src="webgl/shader/noise-vert.glsl"></script>
 
 	<script src="webgl/utils.js"></script>
-	<script src="webgl/noise.js"></script>
-	<script src="webgl/glitch.js"></script>
+	<script src="script/main.js" type="module"></script>
 
 	<script>
 		let pages = ["https://erizo.cc/", "http://rxn.lol/"];

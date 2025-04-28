@@ -20,12 +20,3 @@ hr {
 #main-canvas {
 	position: fixed;
 }
-
-.custom-site-content {
-	z-index: 1;
-}
-
-#img-tooltip,
-#img-renderer {
-	z-index: 2;
-}

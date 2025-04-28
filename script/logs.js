@@ -45,6 +45,8 @@ function update_opacity() {
 
 let showed_neofetch = false;
 async function show_neofetch() {
+	if (showed_neofetch) return;
+
 	showed_neofetch = true;
 	const log = await get_text("/script/log/neofetch.html");
 	after_start_logs.innerHTML = "";

@@ -57,7 +57,7 @@ async function fix_image_size_for_webgl(gl, image) {
 }
 
 export async function glitch_start() {
-	let imageIndex = Math.floor(Math.random() * 5) + 1;
+	let imageIndex = Math.floor(Math.random() * 6) + 1;
 	let image = await loadImage(`webgl/texture/active-${imageIndex}.jpg`);
 	let invert_settings = [true, false, false, false, true, false, false];
 	const overlay_img = await loadImage(`webgl/texture/inversion-${imageIndex}.png`);

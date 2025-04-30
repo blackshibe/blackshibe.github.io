@@ -100,7 +100,7 @@ void main() {
 
     // noise blackbox magic
     float time = u_time;
-    float GLITCH = 1.0 * u_glitch;
+    float GLITCH = 0.0;// 1.0 * u_glitch;
 
     float rdist = length((uv - vec2(0.5, 0.5)));
     float gnm = sat(GLITCH);
@@ -129,7 +129,7 @@ void main() {
     float distance_to_center = length(vec2(v_texCoord.x, v_texCoord.y) - u_mouse_position) * 0.1;
 
     float chromatic_aberration = distance_to_center * distance_to_center;
-    float noise_strength = 0.0;
+    float noise_strength = distance_to_center * distance_to_center;
 
     // zoom in a little
     float zoom = 1.3;
@@ -161,16 +161,15 @@ void main() {
     sum.a *= RCP_NUM_SAMPLES_F;
 
     sum.rgb += get_noise(rand(u_time) + rdist).xyz;
-    sum.rgb += vec3(0.1, 0.1, 0.1) * chromatic_aberration;
+    sum.rgb -= vec3(0.8, 1.0, 1.0) * (noise_strength * 4.0);
 
     gl_FragColor.a = sum.a;
     gl_FragColor.rgb = lerp(sum.rgb, texture2D(u_image, uv).rgb, -1.0);
 
-    if (u_invert > 1.5) return;
+    uv.x += (u_mouse_position.x + 0.5) / 20.0;
+    uv.y += (u_mouse_position.y + 0.5) / 40.0;
 
-    uv += u_mouse_position / 10.0;
-
-    vec3 text = texture2D(u_inverted_texture, uv).rgb;
-    gl_FragColor.rgb += text * u_invert;
-    gl_FragColor.rgb += noise_shader(noise_strength).xyz;
+    vec4 inverted_data = texture2D(u_inverted_texture, uv);
+    gl_FragColor.rgb = lerp(gl_FragColor.rgb, inverted_data.rgb, inverted_data.a);
+    gl_FragColor.rgb += noise_shader(noise_strength * 25.0).xyz;
 }

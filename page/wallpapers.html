@@ -61,8 +61,6 @@
 	</head>
 	<!-- i can't be bothered to build this from some macro or express webpage -->
 	<body class="font-custom leading-6 text-lg">
-		<canvas id="main-canvas" class="absolute w-screen h-screen left-0 top-0 opacity-10"></canvas>
-
 		<div class="custom-site-content">
 			<div style="height: 10vh"></div>
 			<article class="flex flex-col gap-2 min-h-screen" id="card-contents">
@@ -330,11 +328,5 @@
 				});
 			}
 		</script>
-
-		<script id="noise-frag" type="x-shader/x-fragment" src="/webgl/shader/noise-frag.glsl"></script>
-		<script id="noise-vert" type="x-shader/x-vertex" src="/webgl/shader/noise-vert.glsl"></script>
-
-		<script src="/webgl/utils.js"></script>
-		<script src="/webgl/noise.js"></script>
 	</body>
 </html>

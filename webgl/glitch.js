@@ -57,7 +57,7 @@ async function fix_image_size_for_webgl(gl, image) {
 }
 
 export async function glitch_start() {
-	let imageIndex = Math.floor(Math.random() * 6) + 1;
+	let imageIndex = Math.floor(Math.random() * 5) + 1;
 	let image = await loadImage(`webgl/texture/active-${imageIndex}.jpg`);
 	let invert_settings = [true, false, false, false, true, false, false];
 	const overlay_img = await loadImage(`webgl/texture/inversion-${imageIndex}.png`);
@@ -167,8 +167,8 @@ export async function glitch_start() {
 	gl.vertexAttribPointer(early_variables.texture_coord, size, type, normalize, stride, offset);
 
 	// count mouse movement inbetween frames
-	let mouse = { x: 0, y: 0 };
-	let last_mouse = { x: 0, y: 0 };
+	let mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+	let last_mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
 
 	document.onmousemove = function (e) {
 		mouse.x = e.clientX;
@@ -177,7 +177,6 @@ export async function glitch_start() {
 	};
 
 	let time = 1;
-	let delay = 1;
 	let last_mouse_position = { x: 0, y: 0 };
 
 	function lerp(a, b, t) {
@@ -220,7 +219,7 @@ export async function glitch_start() {
 		gl.uniform1f(gl_variables.u_time, time);
 		gl.uniform1f(gl_variables.u_invert, invert_settings[imageIndex] ? -1 : 1);
 		gl.uniform1f(gl_variables.u_glitch, 0.01 + (mouse_dx + mouse_dy) / 6000);
-		gl.uniform2f(gl_variables.u_mouse_position, new_mouse_position.x, new_mouse_position.y);
+		gl.uniform2f(gl_variables.u_mouse_position, new_mouse_position.x - 0.3, new_mouse_position.y);
 		if (Math.random() > 0.95) gl.uniform1f(gl_variables.u_glitch, 1.0);
 
 		last_mouse_position.x = new_mouse_position.x;

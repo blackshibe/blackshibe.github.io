@@ -3,7 +3,6 @@ import { glitch_start } from "/webgl/glitch.js";
 
 const logs = document.getElementById("logs");
 const after_start_logs = document.getElementById("new-logs");
-const load_notification = document.getElementById("load-notification");
 
 const has_seen_intro_value = true; //  localStorage.getItem("has_seen_intro") !== undefined;
 const MS_INTRO_STOP_DELAY = has_seen_intro_value ? 100 : 250;
@@ -73,7 +72,6 @@ async function after_intro() {
 }
 
 export async function load_logs() {
-	load_notification.classList.add("hidden");
 	localStorage.setItem("has_seen_intro", true);
 	noise_start();
 
